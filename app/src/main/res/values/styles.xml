@@ -1,0 +1,283 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="ActionBarTitle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/text_color_secondary</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="ActionBarSubtitle" parent="TextAppearance.AppCompat.Widget.ActionBar.Subtitle">
+        <item name="android:textColor">@color/text_color_black_50alpha</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="ActionBar" parent="Widget.AppCompat.ActionBar.Solid">
+        <item name="android:titleTextStyle">@style/ActionBarTitle</item>
+        <item name="android:subtitleTextStyle">@style/ActionBarSubtitle</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="ActionMenuText" parent="TextAppearance.AppCompat.Widget.ActionBar.Menu">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="ActionTabText" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="AppToolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="contentInsetStart">0dp</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+    </style>
+
+    <style name="AppToolbarNavigation" parent="Widget.AppCompat.Toolbar.Button.Navigation">
+        <item name="android:minWidth">40dp</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorAccent</item>
+        <item name="colorPrimaryDark">@color/colorAccent</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@drawable/window_background</item>
+        <item name="android:actionMenuTextAppearance">@style/ActionMenuText</item>
+        <item name="android:actionBarStyle">@style/ActionBar</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- Toolbar styles -->
+        <item name="toolbarStyle">@style/AppToolbar</item>
+        <item name="toolbarNavigationButtonStyle">@style/AppToolbarNavigation</item>
+
+        <!-- Dialog styles -->
+        <item name="android:dialogTheme">@style/AppTheme.Dialog</item>
+        <item name="android:alertDialogTheme">@style/AppTheme.Dialog.Alert</item>
+        <item name="android:alertDialogStyle">@style/AlertDialog</item>
+        <item name="android:alertDialogIcon">@null</item>
+
+        <!-- checkbox styles -->
+        <item name="android:listChoiceIndicatorSingle">@drawable/btn_checkbox_light</item>
+        <item name="android:listChoiceIndicatorMultiple">@drawable/btn_checkbox_light</item>
+
+        <!-- Progress Styles -->
+        <item name="android:progressBarStyle">@style/Widget.ProgressBar</item>
+        <item name="android:progressBarStyleInverse">@style/Widget.ProgressBar</item>
+        <item name="android:progressBarStyleLarge">@style/Widget.ProgressBar</item>
+        <item name="android:progressBarStyleLargeInverse">@style/Widget.ProgressBar</item>
+        <item name="android:progressBarStyleSmall">@style/Widget.ProgressBar.Small</item>
+        <item name="android:progressBarStyleSmallInverse">@style/Widget.ProgressBar.Small</item>
+        <item name="android:progressBarStyleSmallTitle">@style/Widget.ProgressBar.Small</item>
+        <item name="android:progressBarStyleHorizontal">@style/Widget.ProgressBar.Horizontal</item>
+    </style>
+
+    <style name="AppTheme.Translucent" parent="Theme.AppCompat">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+    </style>
+
+    <style name="AppTheme.Translucent.NoTitleBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!-- The light theme for dialog. -->
+    <style name="AppTheme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowTitleStyle">@style/Widget.DialogTitle</item>
+        <item name="android:windowBackground">@drawable/dialog_bg_light</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+    </style>
+
+    <!-- The light theme for alert dialog. -->
+    <style name="AppTheme.Dialog.Alert">
+        <item name="android:windowMinWidthMajor">@dimen/dialog_min_width_major</item>
+        <item name="android:windowMinWidthMinor">@dimen/dialog_min_width_minor</item>
+    </style>
+
+    <style name="LoginActivityTextStyle">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/text_color_black_80alpha</item>
+    </style>
+
+    <style name="empty_file_list_hint_style">
+        <item name="android:singleLine">false</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:textColor">@color/text_color_tertiary</item>
+    </style>
+
+    <style name="MineTitleTextStyle">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/text_color_black_90alpha</item>
+    </style>
+
+    <style name="MineCountTextStyle">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/mine_page_count_color</item>
+    </style>
+
+    <style name="VideoProgressBar" parent="android:Widget.ProgressBar">
+        <item name="android:indeterminateDrawable">@drawable/video_progressbar</item>
+        <item name="android:indeterminateDuration">200</item>
+        <item name="android:minWidth">52dp</item>
+        <item name="android:maxWidth">52dp</item>
+        <item name="android:minHeight">52dp</item>
+        <item name="android:maxHeight">52dp</item>
+    </style>
+
+    <style name="FileSizeTextAppearance"></style>
+
+    <style name="ToastTextStyle">
+        <item name="android:minHeight">44dp</item>
+        <item name="backGround">@drawable/toast_bg_top</item>
+        <item name="textColor">@color/toast_text_color</item>
+        <item name="textSize">12sp</item>
+        <item name="textGravity">center</item>
+        <item name="iconType">none</item>
+    </style>
+
+    <style name="FileTextAppearance" parent="@android:style/TextAppearance"></style>
+
+    <style name="FileTextAppearance.FileSize">
+        <item name="android:textSize">@dimen/small_text_size</item>
+        <item name="android:textColor">@color/text_color_tertiary</item>
+    </style>
+
+    <style name="ListItemStyle">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingTop">12dip</item>
+        <item name="android:paddingBottom">12dip</item>
+        <item name="android:paddingLeft">@dimen/list_item_padding</item>
+        <item name="android:paddingRight">@dimen/list_item_padding</item>
+    </style>
+
+    <style name="TopicCountTextStyle">
+        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">@color/mine_page_count_color</item>
+    </style>
+
+    <style name="TopicCountTipTextStyle">
+        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">@color/text_color_black_60alpha</item>
+    </style>
+
+    <style name="TopicHeaderTextStyle">
+        <item name="android:textColor">@color/text_color_white_90alpha</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:shadowColor">@color/text_color_black_15alpha</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">1</item>
+    </style>
+
+    <style name="GroupDividerStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">10dp</item>
+    </style>
+
+    <style name="SlidingButton">
+        <item name="frame">@drawable/sliding_btn_frame</item>
+        <item name="sliderOn">@drawable/sliding_btn_slider_on</item>
+        <item name="sliderOff">@drawable/sliding_btn_slider_off</item>
+        <item name="mask">@drawable/sliding_btn_mask</item>
+    </style>
+
+    <!-- Base style for animations. The style specifics no animations. -->
+    <style name="Animation" />
+
+    <!-- Dialog animation. -->
+    <style name="Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/dialog_enter</item>
+        <item name="android:windowExitAnimation">@anim/dialog_exit</item>
+    </style>
+
+    <style name="TextAppearance.DialogTitle" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textSize">@dimen/dialog_text_size</item>
+        <item name="android:textColor">@color/text_color_primary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- The style of button for dialog -->
+    <style name="Widget.Button.Dialog" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">35dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:background">@drawable/btn_bg_normal</item>
+        <item name="android:textColor">@color/text_color_secondary</item>
+    </style>
+
+    <style name="Widget.Button.Dialog.Default">
+        <item name="android:background">@drawable/btn_bg_default</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!-- Alert dialog style. -->
+    <style name="AlertDialog">
+        <item name="android:fullDark">@android:color/transparent</item>
+        <item name="android:topDark">@android:color/transparent</item>
+        <item name="android:centerDark">@android:color/transparent</item>
+        <item name="android:bottomDark">@android:color/transparent</item>
+        <item name="android:fullBright">@android:color/transparent</item>
+        <item name="android:topBright">@android:color/transparent</item>
+        <item name="android:centerBright">@android:color/transparent</item>
+        <item name="android:bottomBright">@android:color/transparent</item>
+        <item name="android:bottomMedium">@android:color/transparent</item>
+        <item name="android:centerMedium">@android:color/transparent</item>
+        <item name="android:layout">@layout/alert_dialog</item>
+        <item name="listLayout">@layout/select_dialog</item>
+        <item name="listItemLayout">@layout/select_dialog_item</item>
+        <item name="multiChoiceItemLayout">@layout/select_dialog_multichoice</item>
+        <item name="singleChoiceItemLayout">@layout/select_dialog_singlechoice</item>
+    </style>
+
+    <!-- Widget style. -->
+    <style name="Widget" />
+
+    <!-- Dialog title style. -->
+    <style name="Widget.DialogTitle">
+        <item name="android:textAppearance">@style/TextAppearance.DialogTitle</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+
+    <!-- The default style of indeterminate ProgressBar -->
+    <style name="Widget.ProgressBar" parent="Widget.AppCompat.ProgressBar">
+        <item name="android:minWidth">@dimen/progressbar_size</item>
+        <item name="android:maxWidth">@dimen/progressbar_size</item>
+        <item name="android:minHeight">@dimen/progressbar_size</item>
+        <item name="android:maxHeight">@dimen/progressbar_size</item>
+    </style>
+
+    <!-- The style of small indeterminate ProgressBar -->
+    <style name="Widget.ProgressBar.Small">
+        <item name="android:minWidth">@dimen/progressbar_size_small</item>
+        <item name="android:maxWidth">@dimen/progressbar_size_small</item>
+        <item name="android:minHeight">@dimen/progressbar_size_small</item>
+        <item name="android:maxHeight">@dimen/progressbar_size_small</item>
+    </style>
+
+    <!-- The style of horizontal ProgressBar -->
+    <style name="Widget.ProgressBar.Horizontal" parent="Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="android:background">@null</item>
+        <item name="android:minHeight">@dimen/progressbar_horizontal_indeterminate_height</item>
+        <item name="android:maxHeight">@dimen/progressbar_horizontal_indeterminate_height</item>
+    </style>
+
+</resources>

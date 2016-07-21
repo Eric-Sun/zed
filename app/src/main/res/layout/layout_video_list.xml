@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.j13.zed.view.RefreshListView
+        android:id="@+id/video_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="#00000000"
+        android:divider="@color/transparent"
+        android:dividerHeight="0dp"
+        android:fadingEdge="none"
+        android:fadingEdgeLength="0dp"
+        android:overScrollMode="never" />
+
+    <!--<include layout="@layout/layout_video_container" />-->
+
+    <!--<include layout="@layout/no_login_layout" />-->
+
+    <com.j13.zed.view.ToastTextView
+        android:id="@+id/toast"
+        style="@style/ToastTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:minHeight="28dp"
+        android:visibility="gone" />
+
+</FrameLayout>
