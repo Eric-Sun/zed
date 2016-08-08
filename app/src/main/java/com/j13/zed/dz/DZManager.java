@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Message;
 
 import com.j13.zed.R;
+import com.j13.zed.api.DZDataResponse;
 import com.j13.zed.api.DZListRequest;
 import com.j13.zed.api.DZResponse;
 import com.j13.zed.api.ZedResponse;
@@ -56,10 +57,10 @@ public class DZManager {
                 try {
                     String json = InternetUtil.request(context, request);
 
-                    ZedResponse response = JsonUtils.parse(json, ZedResponse.class);
+                    DZDataResponse response = JsonUtils.parse(json, DZDataResponse.class);
 
-                    for (int i = 0; i < response.data.list.length; i++) {
-                        DZResponse dzResponse = response.data.list[i];
+                    for (int i = 0; i < response.data.length; i++) {
+                        DZResponse dzResponse = response.data[i];
                         DZInfo dzInfo = new DZInfo();
                         dzInfo.setContent(dzResponse.content);
                         dzInfoList.add(dzInfo);

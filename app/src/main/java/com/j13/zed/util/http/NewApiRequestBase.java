@@ -8,6 +8,7 @@ import com.michael.corelib.internet.core.RequestBase;
 import com.michael.corelib.internet.core.RequestEntity;
 import com.michael.corelib.internet.core.util.InternetStringUtils;
 
+import java.net.URLEncoder;
 import java.util.TreeMap;
 import java.util.Vector;
 
@@ -29,7 +30,9 @@ public class NewApiRequestBase<T> extends RequestBase<T> {
 //            throw new RuntimeException("Method Name MUST NOT be NULL");
 //        }
 
-        String method = "http://123.56.86.200:8080/dz/list?deviceId=aaa";
+        String method = "http://123.56.86.200:8080/?act=" +
+                URLEncoder.encode("dz.list") + "&deviceId=" +
+                URLEncoder.encode("aaa") + "&args=" + URLEncoder.encode("{}");
 //        if (!method.startsWith("http://") && !method.startsWith("https://")) {
 //            method = ApiConstant.getBaseMcpApiUrl() + "api/" + method.replace('.', '/');
 //        }

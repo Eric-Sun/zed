@@ -6,9 +6,9 @@ import com.michael.corelib.internet.core.json.JsonProperty;
 /**
  * Created by sunbo on 16/5/22.
  */
-public class DZDataResponse extends ResponseBase {
+public class DZDataResponse extends ZedResponse {
 
-    @JsonProperty("list")
-    public DZResponse[] list;
+    @JsonProperty("data")
+    public DZResponse[] data;
 
 }

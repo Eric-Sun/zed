@@ -8,11 +8,8 @@ import com.michael.corelib.internet.core.json.JsonProperty;
  */
 public class ZedResponse extends ResponseBase {
 
-    @JsonProperty("code")
-    public int code;
-
-    @JsonProperty("data")
-    public DZDataResponse data;
+    @JsonProperty("status")
+    public int status;
 
     @JsonProperty("uid")
     public long uid;

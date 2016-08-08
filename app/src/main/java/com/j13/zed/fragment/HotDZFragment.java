@@ -19,11 +19,15 @@ import android.widget.Toast;
 
 import com.j13.zed.R;
 import com.j13.zed.adapter.DZInfoAdapter;
+import com.j13.zed.dz.DZInfo;
 import com.j13.zed.dz.DZInfoLoadEvent;
 import com.j13.zed.dz.DZManager;
 import com.j13.zed.helper.FileIconHelper;
 import com.j13.zed.view.RefreshListView;
 import com.j13.zed.view.ToastTextView;
+
+import java.util.LinkedList;
+import java.util.List;
 
 import de.greenrobot.event.EventBus;
 
@@ -40,19 +44,20 @@ public class HotDZFragment extends LazyFragment {
     private DZInfoAdapter adapter = null;
     private FrameLayout mRootView = null;
 
+    private List<DZInfo> currentList = new LinkedList<DZInfo>();
     private RefreshListView listView = null;
 
     private ToastTextView toastTextView = null;
     private FileIconHelper fileIconHelper = null;
+    private boolean mIsLoading = false;
+    private boolean mRefresh = false;
 
     @Override
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         context = getContext();
         fileIconHelper = FileIconHelper.getInstance(context);
-
     }
-
 
     @Override
     public void onUserVisible(boolean first) {
@@ -65,12 +70,6 @@ public class HotDZFragment extends LazyFragment {
     }
 
 
-    public void onEventMainThread(DZInfoLoadEvent event) {
-
-        adapter.setData(event.getDzInfoList());
-        adapter.notifyDataSetChanged();
-    }
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -79,8 +78,6 @@ public class HotDZFragment extends LazyFragment {
         dzManager = DZManager.getInstance(context);
 
 
-        toastTextView = (ToastTextView) mRootView.findViewById(R.id.toast);
-        toastTextView.setAnimation(R.anim.pull_down, R.anim.push_up);
         listView = (RefreshListView) mRootView.findViewById(R.id.video_list);
         listView.setRefreshingText(R.string.file_loading);
         listView.setChoiceMode(RefreshListView.CHOICE_MODE_SINGLE);
@@ -89,6 +86,8 @@ public class HotDZFragment extends LazyFragment {
         listView.setPullLoadEnable(false);
         adapter = new DZInfoAdapter(context);
         listView.setAdapter(adapter);
+        listView.setPullLoadEnable(true);
+        listView.setPullRefreshEnable(true);
 
         listView.setOnRefreshListener(new RefreshListView.OnRefreshListener() {
             @Override
@@ -99,8 +98,9 @@ public class HotDZFragment extends LazyFragment {
             @Override
             public void onLoadMore() {
 //                if (!mIsLoading) {
-//                    loadMoreVideoList(mLastKey);
+//                    loadMoreVideoLi st(mLastKey);
 //                }
+                refreshDZ(false);
             }
 
             @Override
@@ -137,5 +137,27 @@ public class HotDZFragment extends LazyFragment {
     private void refreshDZ(boolean isFirst) {
         dzManager.load();
     }
+
+
+    public void onEventMainThread(DZInfoLoadEvent event) {
+
+        listView.onRefreshComplete();
+        listView.onLoadMoreComplete();
+        listView.setPullRefreshEnable(true);
+        listView.setPullLoadEnable(true);
+//        if (mIsLoading) {
+//            listView.setPullLoadEnable(event.hasMore);
+//            if (event.result == VideoLoadEvent.RESULT_SERVER_ERROR) {
+//                listView.setPullLoadEnable(true);
+//            }
+//        } else if (mRefresh) {
+//            listView.setPullLoadEnable(videoList != null && !videoList.isEmpty());
+//        }
+
+        currentList.addAll(0,event.getDzInfoList());
+        adapter.setData(currentList);
+        adapter.notifyDataSetChanged();
+    }
+
 
 }

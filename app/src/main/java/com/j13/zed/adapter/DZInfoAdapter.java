@@ -57,7 +57,7 @@ public class DZInfoAdapter extends BaseAdapter {
         DZInfo dzInfo = getItem(position);
 
         DZInfoView view = new DZInfoView(context, dzInfo);
-        view.getContent().setText(dzInfo.getContent());
+        view.getContent().setText(dzInfo.getContent().replaceAll("<br />","\n"));
 
         return view;
     }
