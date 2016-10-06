@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="13dp"
+        android:paddingLeft="13dp"
+        android:paddingRight="17dp"
+        android:paddingTop="17dp">
+
+
+        <ImageView
+            android:id="@+id/header_icon_img"
+            android:layout_width="61dp"
+            android:layout_height="61dp"
+            android:layout_marginRight="13dp"
+            android:background="@drawable/head_icon_bg"
+            android:padding="2px"
+            android:src="@drawable/default_head_icon" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="13dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/user_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="7dp"
+                android:singleLine="true"
+                android:textColor="@color/text_color_black_90alpha"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/user_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:textColor="@color/text_color_black_60alpha"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+
+        <FrameLayout
+            android:id="@+id/fl_follow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/btn_follow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="end|center_vertical"
+                android:background="@drawable/bg_follow_button"
+                android:focusable="false"
+                android:gravity="center"
+                android:minHeight="23dp"
+                android:minWidth="57dp"
+                android:text="@string/topic_follow"
+                android:paddingLeft="10dp"
+                android:drawableLeft="@drawable/icon_follow_plus"
+                android:textColor="@color/title_text_color"
+                android:textSize="@dimen/small_text_size" />
+
+            <TextView
+                android:id="@+id/btn_followed"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="end|center_vertical"
+                android:background="@drawable/bg_followed_button"
+                android:focusable="false"
+                android:gravity="center"
+                android:minHeight="23dp"
+                android:minWidth="57dp"
+                android:text="@string/topic_followed"
+                android:textColor="@color/title_text_color"
+                android:textSize="@dimen/small_text_size" />
+        </FrameLayout>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/homepage_header_padding"
+        android:background="@color/background_divide" />
+</LinearLayout>

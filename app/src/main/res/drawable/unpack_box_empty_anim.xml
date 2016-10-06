@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="true">
+    <item
+        android:drawable="@drawable/unpack_box_empty_frame01"
+        android:duration="60" />
+    <item
+        android:drawable="@drawable/unpack_box_empty_frame02"
+        android:duration="60" />
+    <item
+        android:drawable="@drawable/unpack_box_empty_frame03"
+        android:duration="60" />
+    <item
+        android:drawable="@drawable/unpack_box_empty_frame04"
+        android:duration="60" />
+    <item
+        android:drawable="@drawable/unpack_box_empty_frame05"
+        android:duration="60" />
+    <item
+        android:drawable="@drawable/unpack_box_empty_frame06"
+        android:duration="60" />
+    <item
+        android:drawable="@drawable/unpack_box_empty_frame07"
+        android:duration="60" />
+    <item
+        android:drawable="@drawable/unpack_box_empty_frame08"
+        android:duration="60" />
+    <item
+        android:drawable="@drawable/unpack_box_empty_frame09"
+        android:duration="60" />
+    <item
+        android:drawable="@drawable/unpack_box_empty_frame10"
+        android:duration="60" />
+    <item
+        android:drawable="@drawable/unpack_box_empty_frame11"
+        android:duration="60" />
+    <item
+        android:drawable="@drawable/unpack_box_empty_frame12"
+        android:duration="60" />
+    <item
+        android:drawable="@drawable/unpack_box_empty_frame13"
+        android:duration="60" />
+    <item
+        android:drawable="@drawable/unpack_box_empty_frame14"
+        android:duration="60" />
+    <item
+        android:drawable="@drawable/unpack_box_empty_frame15"
+        android:duration="60" />
+    <item
+        android:drawable="@drawable/unpack_box_empty_frame16"
+        android:duration="60" />
+    <item
+        android:drawable="@drawable/unpack_box_empty_frame17"
+        android:duration="60" />
+    <item
+        android:drawable="@drawable/unpack_box_empty_frame18"
+        android:duration="60" />
+    <item
+        android:drawable="@drawable/unpack_box_empty_frame19"
+        android:duration="60" />
+    <item
+        android:drawable="@drawable/unpack_box_empty_frame20"
+        android:duration="60" />
+    <item
+        android:drawable="@drawable/unpack_box_empty_frame21"
+        android:duration="60" />
+    <item
+        android:drawable="@drawable/unpack_box_empty_frame22"
+        android:duration="60" />
+    <item
+        android:drawable="@drawable/unpack_box_empty_frame23"
+        android:duration="60" />
+    <item
+        android:drawable="@drawable/unpack_box_empty_frame24"
+        android:duration="60" />
+    <item
+        android:drawable="@drawable/unpack_box_empty_frame25"
+        android:duration="60" />
+    <item
+        android:drawable="@drawable/unpack_box_empty_frame26"
+        android:duration="60" />
+    <item
+        android:drawable="@drawable/unpack_box_empty_frame27"
+        android:duration="60" />
+    <item
+        android:drawable="@drawable/unpack_box_empty_frame28"
+        android:duration="60" />
+    <item
+        android:drawable="@drawable/unpack_box_empty_frame29"
+        android:duration="60" />
+    <item
+        android:drawable="@drawable/unpack_box_empty_frame30"
+        android:duration="60" />
+    <item
+        android:drawable="@drawable/unpack_box_empty_frame31"
+        android:duration="60" />
+    <item
+        android:drawable="@drawable/unpack_box_empty_frame32"
+        android:duration="60" />
+    <item
+        android:drawable="@drawable/unpack_box_empty_frame33"
+        android:duration="60" />
+    <item
+        android:drawable="@drawable/unpack_box_empty_frame34"
+        android:duration="60" />
+    <item
+        android:drawable="@drawable/unpack_box_empty_frame35"
+        android:duration="60" />
+    <item
+        android:drawable="@drawable/unpack_box_empty_frame36"
+        android:duration="60" />
+
+</animation-list>

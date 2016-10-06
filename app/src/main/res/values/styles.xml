@@ -1,8 +1,9 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <style name="ActionBarTitle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
-        <item name="android:textColor">@color/text_color_secondary</item>
-        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/title_text_color</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:displayOptions">homeAsUp</item>
     </style>
 
     <style name="ActionBarSubtitle" parent="TextAppearance.AppCompat.Widget.ActionBar.Subtitle">
@@ -14,6 +15,7 @@
         <item name="android:titleTextStyle">@style/ActionBarTitle</item>
         <item name="android:subtitleTextStyle">@style/ActionBarSubtitle</item>
         <item name="android:windowContentOverlay">@null</item>
+        <item name="android:displayOptions">homeAsUp</item>
     </style>
 
     <style name="ActionMenuText" parent="TextAppearance.AppCompat.Widget.ActionBar.Menu">
@@ -22,7 +24,7 @@
     </style>
 
     <style name="ActionTabText" parent="TextAppearance.Design.Tab">
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
     <style name="AppToolbar" parent="Widget.AppCompat.Toolbar">
@@ -35,18 +37,24 @@
         <item name="android:minWidth">40dp</item>
     </style>
 
+    <style name="AppToolbarOverflow" parent="Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:src">@drawable/ic_overflow</item>
+    </style>
+
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorPrimary">@color/colorAccent</item>
-        <item name="colorPrimaryDark">@color/colorAccent</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowBackground">@drawable/window_background</item>
         <item name="android:actionMenuTextAppearance">@style/ActionMenuText</item>
         <item name="android:actionBarStyle">@style/ActionBar</item>
+        <item name="actionBarSize">@dimen/action_bar_height</item>
         <item name="android:windowContentOverlay">@null</item>
         <!-- Toolbar styles -->
         <item name="toolbarStyle">@style/AppToolbar</item>
         <item name="toolbarNavigationButtonStyle">@style/AppToolbarNavigation</item>
+        <item name="actionOverflowButtonStyle">@style/AppToolbarOverflow</item>
 
         <!-- Dialog styles -->
         <item name="android:dialogTheme">@style/AppTheme.Dialog</item>
@@ -102,6 +110,19 @@
         <item name="android:windowCloseOnTouchOutside">true</item>
     </style>
 
+    <style name="AppTheme.Dialog.Transparent">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowTitleStyle">@style/Widget.DialogTitle</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+    </style>
+
     <!-- The light theme for alert dialog. -->
     <style name="AppTheme.Dialog.Alert">
         <item name="android:windowMinWidthMajor">@dimen/dialog_min_width_major</item>
@@ -126,18 +147,23 @@
         <item name="android:textColor">@color/text_color_black_90alpha</item>
     </style>
 
+    <style name="MineCountTopTextStyle">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/text_color_secondary</item>
+    </style>
+
     <style name="MineCountTextStyle">
         <item name="android:textSize">13sp</item>
-        <item name="android:textColor">@color/mine_page_count_color</item>
+        <item name="android:textColor">@color/text_color_secondary</item>
     </style>
 
     <style name="VideoProgressBar" parent="android:Widget.ProgressBar">
         <item name="android:indeterminateDrawable">@drawable/video_progressbar</item>
         <item name="android:indeterminateDuration">200</item>
-        <item name="android:minWidth">52dp</item>
-        <item name="android:maxWidth">52dp</item>
-        <item name="android:minHeight">52dp</item>
-        <item name="android:maxHeight">52dp</item>
+        <item name="android:minWidth">47dp</item>
+        <item name="android:maxWidth">47dp</item>
+        <item name="android:minHeight">47dp</item>
+        <item name="android:maxHeight">47dp</item>
     </style>
 
     <style name="FileSizeTextAppearance"></style>
@@ -162,6 +188,7 @@
         <item name="android:gravity">center_vertical</item>
         <item name="android:paddingTop">12dip</item>
         <item name="android:paddingBottom">12dip</item>
+        <item name="android:background">@drawable/card_background</item>
         <item name="android:paddingLeft">@dimen/list_item_padding</item>
         <item name="android:paddingRight">@dimen/list_item_padding</item>
     </style>
@@ -177,12 +204,8 @@
     </style>
 
     <style name="TopicHeaderTextStyle">
-        <item name="android:textColor">@color/text_color_white_90alpha</item>
+        <item name="android:textColor">@color/text_color_primary</item>
         <item name="android:singleLine">true</item>
-        <item name="android:shadowColor">@color/text_color_black_15alpha</item>
-        <item name="android:shadowDx">1</item>
-        <item name="android:shadowDy">1</item>
-        <item name="android:shadowRadius">1</item>
     </style>
 
     <style name="GroupDividerStyle">
@@ -220,12 +243,11 @@
         <item name="android:minHeight">35dp</item>
         <item name="android:singleLine">true</item>
         <item name="android:background">@drawable/btn_bg_normal</item>
-        <item name="android:textColor">@color/text_color_secondary</item>
+        <item name="android:textColor">@color/title_text_color</item>
     </style>
 
     <style name="Widget.Button.Dialog.Default">
         <item name="android:background">@drawable/btn_bg_default</item>
-        <item name="android:textColor">@color/white</item>
     </style>
 
     <!-- Alert dialog style. -->
@@ -280,4 +302,51 @@
         <item name="android:maxHeight">@dimen/progressbar_horizontal_indeterminate_height</item>
     </style>
 
+    <style name="LoadingProgressStyle" parent="android:Widget.ProgressBar">
+        <item name="android:indeterminateDrawable">@drawable/bg_progress</item>
+        <item name="android:indeterminate">true</item>
+        <item name="android:indeterminateBehavior">repeat</item>
+        <item name="android:minWidth">46dp</item>
+        <item name="android:maxWidth">46dp</item>
+        <item name="android:minHeight">53dp</item>
+        <item name="android:maxHeight">53dp</item>
+    </style>
+
+    <style name="anim_popup_window">
+        <item name="android:windowEnterAnimation">@anim/popup_window_in</item>
+        <item name="android:windowExitAnimation">@anim/popup_window_out</item>
+    </style>
+
+    <style name="FullscreenTheme" parent="AppTheme.NoActionBar">
+        <item name="android:actionBarStyle">@style/FullscreenActionBarStyle</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="metaButtonBarStyle">?android:attr/buttonBarStyle</item>
+        <item name="metaButtonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
+    </style>
+
+    <style name="FullscreenActionBarStyle" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/black_overlay</item>
+    </style>
+
+    <style name="PrizeResultActivityTheme" parent="AppTheme.NoActionBar">
+        <item name="android:windowBackground">@drawable/bg_prize_result</item>
+    </style>
+
+    <style name="BottomTabTextStyle">
+        <item name="android:textColor">@color/text_color_black_60alpha</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="MyDialogStyle" parent="@style/Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
 </resources>

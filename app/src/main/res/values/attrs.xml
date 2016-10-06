@@ -63,13 +63,13 @@
     </declare-styleable>
 
     <declare-styleable name="SlidingButton">
-        <attr name="frame" format="reference"/>
-        <attr name="sliderOn" format="reference"/>
-        <attr name="sliderOff" format="reference"/>
-        <attr name="mask" format="reference"/>
-        <attr name="bar" format="reference"/>
-        <attr name="barOff" format="reference"/>
-        <attr name="barOn" format="reference"/>
+        <attr name="frame" format="reference" />
+        <attr name="sliderOn" format="reference" />
+        <attr name="sliderOff" format="reference" />
+        <attr name="mask" format="reference" />
+        <attr name="bar" format="reference" />
+        <attr name="barOff" format="reference" />
+        <attr name="barOn" format="reference" />
     </declare-styleable>
 
     <declare-styleable name="AlertDialog">
@@ -81,4 +81,40 @@
         <attr name="progressLayout" format="reference" />
         <attr name="horizontalProgressLayout" format="reference" />
     </declare-styleable>
+
+    <declare-styleable name="SwipeStack">
+        <attr name="allowed_swipe_directions" format="integer">
+            <enum name="only_left" value="1" />
+            <enum name="only_right" value="2" />
+            <enum name="both" value="0" />
+        </attr>
+        <attr name="animation_duration" format="integer" />
+        <attr name="stack_size" format="integer" />
+        <attr name="stack_spacing" format="dimension" />
+        <attr name="stack_rotation" format="integer" />
+        <attr name="swipe_rotation" format="float" />
+        <attr name="swipe_opacity" format="float" />
+        <attr name="scaleX_factor" format="float" />
+        <attr name="scaleY_factor" format="float" />
+        <attr name="disable_hw_acceleration" format="boolean" />
+    </declare-styleable>
+
+    <!-- Declare custom theme attributes that allow changing which styles are
+         used for button bars depending on the API level.
+         ?android:attr/buttonBarStyle is new as of API 11 so this is
+         necessary to support previous API levels. -->
+    <declare-styleable name="ButtonBarContainerTheme">
+        <attr name="metaButtonBarStyle" format="reference" />
+        <attr name="metaButtonBarButtonStyle" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="LoadingProgressBar">
+        <attr name="appSrc" format="reference" />
+        <attr name="appGravity" format="integer">
+            <enum name="top" value="1" />
+            <enum name="center" value="2" />
+            <enum name="bottom" value="0" />
+        </attr>
+    </declare-styleable>
+
 </resources>

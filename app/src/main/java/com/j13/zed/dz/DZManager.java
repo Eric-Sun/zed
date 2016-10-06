@@ -1,22 +1,17 @@
 package com.j13.zed.dz;
 
 import android.content.Context;
-import android.os.Message;
 
-import com.j13.zed.R;
-import com.j13.zed.api.DZDataResponse;
-import com.j13.zed.api.DZListRequest;
-import com.j13.zed.api.DZResponse;
-import com.j13.zed.api.ZedResponse;
-import com.j13.zed.util.http.InternetUtil;
+import com.j13.zed.api.dz.DZDataResponse;
+import com.j13.zed.api.dz.DZListRequest;
+import com.j13.zed.api.dz.DZResponse;
+import com.j13.zed.api.InternetUtil;
 import com.j13.zed.util.thread.CustomThreadPool;
 import com.michael.corelib.internet.core.NetWorkException;
 import com.michael.corelib.internet.core.util.JsonUtils;
 
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
 import de.greenrobot.event.EventBus;
 
@@ -63,6 +58,8 @@ public class DZManager {
                         DZResponse dzResponse = response.data[i];
                         DZInfo dzInfo = new DZInfo();
                         dzInfo.setContent(dzResponse.content);
+                        dzInfo.setUserName(dzResponse.userName);
+                        dzInfo.setImg(dzResponse.img);
                         dzInfoList.add(dzInfo);
                     }
 

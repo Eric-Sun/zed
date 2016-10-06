@@ -12,6 +12,22 @@
         <item quantity="other">%1$d天前</item>
     </plurals>
 
+    <plurals name="mins">
+        <item quantity="other">%1$d分钟</item>
+    </plurals>
+
+    <plurals name="hours">
+        <item quantity="other">%1$d小时</item>
+    </plurals>
+
+    <plurals name="days">
+        <item quantity="other">%1$d天</item>
+    </plurals>
+
+    <plurals name="months">
+        <item quantity="other">%1$d月</item>
+    </plurals>
+
     <plurals name="remote_video_update">
         <item quantity="other">已更新%1$s条视频</item>
     </plurals>
@@ -33,7 +49,7 @@
     </plurals>
 
     <plurals name="follower_num">
-        <item quantity="other">个关注者</item>
+        <item quantity="other">个粉丝</item>
     </plurals>
 
     <plurals name="number_of_comment">

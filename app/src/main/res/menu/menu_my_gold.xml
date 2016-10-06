@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.MyPointActivity">
+    <item
+        android:id="@+id/action_gold_record"
+        android:orderInCategory="100"
+        android:title="@string/action_gold_record"
+        app:showAsAction="never" />
+    <!--<item-->
+        <!--android:id="@+id/action_prize_record"-->
+        <!--android:orderInCategory="100"-->
+        <!--android:title="@string/action_prize_record"-->
+        <!--app:showAsAction="never" />-->
+
+</menu>

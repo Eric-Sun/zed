@@ -7,6 +7,7 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 
 import com.j13.zed.dz.DZInfo;
+import com.j13.zed.helper.FileIconHelper;
 import com.j13.zed.view.DZInfoView;
 
 import java.util.LinkedList;
@@ -24,7 +25,6 @@ public class DZInfoAdapter extends BaseAdapter {
     public DZInfoAdapter(Context context) {
         this.context = context;
     }
-
 
 
     public void setData(List<DZInfo> dzInfoList) {
@@ -57,7 +57,11 @@ public class DZInfoAdapter extends BaseAdapter {
         DZInfo dzInfo = getItem(position);
 
         DZInfoView view = new DZInfoView(context, dzInfo);
-        view.getContent().setText(dzInfo.getContent().replaceAll("<br />","\n"));
+        view.getContent().setText(dzInfo.getContent().replaceAll("<br />", "\n"));
+        view.getUserName().setText(dzInfo.getUserName());
+        String url = "http://123.56.86.200/" + dzInfo.getImg();
+        FileIconHelper.getInstance(context).loadInto(
+                url, 0, 0, 0, view.getUserHeader(), true);
 
         return view;
     }

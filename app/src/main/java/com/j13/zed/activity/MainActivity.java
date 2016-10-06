@@ -48,7 +48,6 @@ public class MainActivity extends BaseActivity{
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
-        setContentView(R.layout.dz_activity);
         super.onCreate(savedInstanceState);
 
         actionBar = getActionBar();
@@ -80,6 +79,11 @@ public class MainActivity extends BaseActivity{
         });
         mViewPager.setCurrentItem(1);
 
+    }
+
+    @Override
+    protected int geContentViewId() {
+        return R.layout.dz_activity;
     }
 
     private Fragment getCurrentFragment() {

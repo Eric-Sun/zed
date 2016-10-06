@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@color/text_color_white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText android:id="@+id/phone_num_et"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:hint="@string/phone_num_et_hint"
+        android:layout_marginTop="23dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginRight="23dp"
+        android:paddingLeft="13dp"
+        android:textSize="14sp"
+        android:textColor="@color/text_color_black_80alpha"
+        android:textColorHint="@color/text_color_tertiary"
+        android:inputType="phone"
+        android:background="@drawable/phone_input_up_bg"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginRight="23dp"
+        android:layout_marginTop="-2px"
+        android:paddingLeft="13dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/phone_input_down_bg">
+
+        <EditText android:id="@+id/code_et"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="14sp"
+            android:background="@color/text_color_white"
+            android:textColor="@color/text_color_black_80alpha"
+            android:hint="@string/phone_code_et_hint"
+            android:textColorHint="@color/text_color_tertiary"
+            android:maxLength="6"
+            android:inputType="phone"/>
+
+        <Button android:id="@+id/code_get_btn"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+            android:textAllCaps="false"
+            android:text="@string/phone_send_code"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:background="@drawable/phone_code_btn_bg"
+            android:textColor="@color/text_color_primary"
+            android:layout_marginRight="7dp"/>
+
+        </LinearLayout>
+
+    <Button android:id="@+id/phone_login_btn"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginRight="23dp"
+        android:background="@drawable/btn_claim_bg"
+        android:textColor="@color/text_color_primary"
+        android:textSize="13sp"
+        android:text="@string/login"/>
+
+    <TextView android:id="@+id/phone_bind_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginTop="27dp"
+        android:text="@string/phone_bind_tip"
+        android:textSize="11sp"
+        android:textColor="@color/text_color_black_60alpha"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <TextView android:id="@+id/phone_bind_skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginBottom="40dp"
+        android:text="@string/phone_bind_skip"
+        android:paddingLeft="25dp"
+        android:paddingTop="25dp"
+        android:paddingRight="25dp"
+        android:textColor="@color/bind_skip_text_color"
+        android:textSize="12sp"/>
+
+</LinearLayout>

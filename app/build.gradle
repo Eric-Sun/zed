@@ -66,5 +66,10 @@ dependencies {
     compile 'com.android.support:design:23.2.1'
     compile 'com.android.support:recyclerview-v7:23.2.1'
     compile 'org.greenrobot:greendao:2.2.0'
+    compile 'com.growingio.android:vds-android:latest.release@aar'
+    compile 'com.android.support:support-v4:23.2.1'
+    compile 'com.orhanobut:logger:1.15'
+    compile 'com.google.android.exoplayer:exoplayer:r1.5.10'
+    compile files('libs/weiboSDKCore_3.1.4.jar')
 }
 

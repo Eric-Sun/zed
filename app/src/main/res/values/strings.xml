@@ -1,33 +1,41 @@
 <resources xmlns:xliff="http://schemas.android.com/tools">
-    <string name="app_name">快盘</string>
+    <string name="app_name">有料</string>
+    <string name="app_name1">有料视频</string>
+
     <string name="slashes">/</string>
 
+    <string name="tab_homepage">首页</string>
+    <string name="tab_claim">认领</string>
+    <string name="tab_discover">发现</string>
+    <string name="tab_mine">我的</string>
+
     <!--标题-->
+    <string name="tab_follow_video">关注</string>
+    <string name="tab_recommend_video">推荐</string>
     <string name="tab_hot_video">最热</string>
     <string name="tab_new_video">最新</string>
     <string name="tab_profile">我的</string>
 
     <string name="play_count">播放次数</string>
     <string name="publish_time">发布时间</string>
-    <string name="user_nickname">用户昵称</string>
     <string name="video_description">视频描述</string>
     <string name="favorite">点赞</string>
     <string name="upload_video">上传视频</string>
-    <string name="upload_tips">仅支持3秒~十分钟的视频</string>
+    <string name="upload_tips">仅支持3秒~10分钟的视频</string>
     <string name="next">下一步</string>
     <string name="action_settings">设置</string>
     <string name="press_back_to_exit">再按一次退出应用</string>
     <string name="xunlei">迅雷</string>
     <string name="create_short_success">创建桌面快捷方式成功</string>
     <string name="title_activity_login">账户登录</string>
-    <string name="login_tip">参与话题，赢大奖</string>
+    <string name="login_tip">你离大奖只差登录这一步了！</string>
     <string name="wechat_btn_str">微信</string>
     <string name="phone_btn_str">手机</string>
     <string name="phone_num_et_hint">请输入手机号</string>
     <string name="phone_code_et_hint">请输入验证码</string>
     <string name="phone_send_code">获取验证码</string>
     <string name="login">登录</string>
-    <string name="phone_bind_tip">绑定手机号可以参与话题排名，每周赢取惊喜大奖！</string>
+    <string name="phone_bind_tip">绑定手机号可以参与活动，赢取惊喜大奖！</string>
     <string name="phone_bind_skip">放弃领奖机会，跳过&#160;></string>
     <string name="phone_bind_title">绑定手机</string>
     <string name="phone_num_format_tip">手机号码格式不正确</string>
@@ -36,7 +44,7 @@
     <string name="phone_code_err">手机号或验证码不正确，请检查后重试</string>
     <string name="phone_valid_code_tip">验证码输入次数过多，请重新获取</string>
     <string name="loading">正在载入&#8230;</string>
-    <string name="login_failed_tip">登录失败，请稍后重试</string>
+    <string name="login_failed_tip">登录失败，请稍后再试</string>
     <string name="login_success_tip">登录成功</string>
     <string name="bind_phone_failed_tip">绑定手机号失败</string>
     <string name="phone_has_used_tip">此帐号已被注册或已绑定其他帐号，换一个试试</string>
@@ -45,22 +53,31 @@
     <string name="phone_send_code_again">重新获取验证码</string>
     <string name="phone_send_code_tip">%1$ds后重新发送</string>
     <string name="user_login_dialog_title">登录帐号</string>
-    <string name="user_login_dialog_tip">上传视频必须登录，登录后可以参与视频热度排名，轻松赢取海量奖品！</string>
-    <string name="user_login_dialog_cancle">不登录，放弃奖品</string>
+    <string name="user_login_dialog_tip">上传视频必须登录，登录后可以参与活动，轻松赢取海量奖品！</string>
+    <string name="user_login_dialog_cancle">不登录，放弃上传</string>
     <string name="phone_login_title">手机登录</string>
-    <string name="login_account_bind_tip">完善昵称头像，视频更受欢迎</string>
+    <string name="login_account_bind_tip">绑定第三方帐号，一键登录更便捷</string>
     <string name="login_account_bind_skip">不绑定，跳过&#160;></string>
-    <string name="login_account_bind_wx">使用微信帐号</string>
+    <string name="login_account_bind_wx">绑定微信帐号</string>
+    <string name="login_account_bind_qq">绑定QQ帐号</string>
+    <string name="login_account_bind_wb">绑定微博帐号</string>
     <string name="user_center_title">个人主页</string>
     <string name="oauth_failed_tip">授权失败</string>
     <string name="bind_failed_tip">绑定失败</string>
     <string name="bind_success_tip">绑定成功</string>
     <string name="no_login_btn_text">马上登录</string>
-    <string name="user_msg_text">我的消息</string>
+    <string name="user_message_text">我的消息</string>
+    <string name="user_like_text">喜欢</string>
+    <string name="user_like_title">我喜欢的视频</string>
+    <string name="user_video_text">上传</string>
+    <string name="user_video_title">我上传的视频</string>
     <string name="user_topic_text">我关注的话题</string>
-    <string name="user_video_text">我上传的视频</string>
-    <string name="user_not_video_btn_text">上传第一个视频</string>
+    <string name="user_follow_text">我关注的人</string>
+    <string name="user_fans_text">我的粉丝</string>
+    <string name="user_not_upload_video">上传第一个视频</string>
+    <string name="user_not_like_video">暂无喜欢的视频</string>
     <string name="user_center_setting">设置</string>
+    <string name="user_center_point">金币</string>
     <string name="get_user_info_err">获取用户信息失败</string>
     <string name="video_play_failed">视频播放失败</string>
 
@@ -77,25 +94,27 @@
     <string name="operation_unlike">取消点赞</string>
     <string name="delete_video">删除</string>
     <string name="delete_video_dialog_title">删除视频</string>
-    <string name="delete_video_dialog_tip">删除视频后，该视频将不可恢复，请谨慎操作！</string>
+    <string name="delete_video_dialog_tip">视频删除后将不可恢复，请谨慎操作！</string>
     <string name="delete_video_success">删除成功</string>
 
     <!--无数据提示-->
     <string name="no_comment">暂无评论，快来抢沙发</string>
     <string name="zero_comment">暂无评论</string>
-    <string name="no_topic">暂无该话题</string>
+    <string name="no_such_topic">暂无该话题</string>
+    <string name="no_topic">暂无话题</string>
     <string name="no_message">暂无消息</string>
+    <string name="no_content">暂无内容</string>
     <string name="no_liked_topic">暂无关注的话题</string>
     <string name="no_new_content_tip">已经是最新了，去最热看看吧！</string>
 
     <!--网络错误-->
-    <string name="no_network_tip">网络未连接，请检查您的网络设置</string>
+    <string name="no_network_tip">网络未连接，请检查你的网络设置</string>
     <string name="server_error">服务器开小差了，请稍后重试（%s）</string>
     <string name="network_not_available">网络未连接，请联网后重试</string>
     <string name="request_timeout">网络超时，请检查网络后重试</string>
     <string name="login_expired">登录失效了，请重新登录</string>
 
-    <string name="video_tag"># %s #</string>
+    <string name="video_tag">#%s#</string>
     <string name="all_topic">全部话题</string>
 
     <!-- action mode -->
@@ -150,7 +169,7 @@
     <string name="message_reply_suffix">：</string>
     <string name="message_praise_video">赞了这条视频</string>
     <string name="message_praise_comment">赞了这条评论</string>
-    <string name="send_error">评论发送失败！</string>
+    <string name="send_error">评论发送失败，请稍后再试</string>
 
     <!--消息-->
     <string name="topic_message">%1$s：%2$s</string>
@@ -159,22 +178,23 @@
     <string name="message_my_received_praise_count">+%1$s</string>
 
     <!--话题-->
+    <string name="topic_title">话题</string>
     <string name="recommend">兴趣推荐</string>
     <string name="topic_followed">已关注</string>
-    <string name="topic_follow">+ 关注</string>
+    <string name="topic_follow">关注</string>
     <string name="user_topic_btn_text">查看更多话题</string>
     <string name="video_topic_hint">搜索话题</string>
 
     <!--设置-->
     <string name="user_setting_new_comment">新的评论消息通知</string>
-    <string name="user_setting_new_comment_tip">视频或评论被回复时，将通知您</string>
+    <string name="user_setting_new_comment_tip">视频或评论被回复时，将通知你</string>
     <string name="user_setting_new_liked">新的点赞消息通知</string>
-    <string name="user_setting_new_liked_tip">有人赞了你的视频或评论，将通知您</string>
+    <string name="user_setting_new_liked_tip">有人赞了你的视频或评论，将通知你</string>
     <string name="user_setting_topic_new_msg">关注的话题有新动态通知</string>
-    <string name="user_setting_topic_new_msg_tip">关注的话题产生了新的视频，将通知您</string>
-    <string name="user_setting_logout">退出账号</string>
+    <string name="user_setting_topic_new_msg_tip">关注的话题产生了新的视频，将通知你</string>
+    <string name="user_setting_logout">退出帐号</string>
     <string name="dialog_logout_title">退出</string>
-    <string name="dialog_logout_message">确定退出账号？</string>
+    <string name="dialog_logout_message">确定退出帐号？</string>
 
     <!-- Suffix added to a number to signify size in bytes. -->
     <string name="byteShort">B</string>
@@ -183,7 +203,7 @@
     <string name="gigabyteShort">GB</string>
     <string name="terabyteShort">TB</string>
     <string name="petabyteShort">PB</string>
-    <string name="fileSizeSuffix"><xliff:g id="number" example="123">%1$s</xliff:g> <xliff:g id="unit" example="KB">%2$s</xliff:g></string>
+    <string name="fileSizeSuffix"><xliff:g example="123" id="number">%1$s</xliff:g> <xliff:g example="KB" id="unit">%2$s</xliff:g></string>
 
     <!--时间格式-->
     <string name="just_now">刚刚</string>
@@ -191,33 +211,43 @@
     <string name="month_day_format">MM月dd日</string>
     <string name="year_month_day_format">yyyy年MM月dd日</string>
 
-    <!--绑定第三方账号-->
-    <string name="login_account_bind_title">绑定第三方账号</string>
+    <!--绑定第三方帐号-->
+    <string name="login_account_bind_title">绑定第三方帐号</string>
 
     <!--视频上传-->
     <string name="user_upload_tip">上传</string>
     <string name="user_no_upload">还没上传视频</string>
     <string name="video_upload_retry_title">重试上传视频</string>
-    <string name="video_upload_retry_message">您之前上传的视频没有成功上传，是否重试？</string>
+    <string name="video_upload_retry_message">你之前上传的视频没有成功上传，是否重试？</string>
     <string name="video_upload_retry_confirm">重试上传</string>
     <string name="video_upload_btn_hint">仅支持3秒~10分钟的MP4短视频</string>
     <string name="video_upload_btn">下一步</string>
     <string name="video_upload_title">选择视频</string>
+    <string name="video_upload_kuaishou_hint">上传推荐视频可获得更多播放和分享</string>
+    <string name="video_upload_wechat_hint">上传微信视频有可能获得更多粉丝哦~</string>
+    <string name="video_uploaded">已上传</string>
+    <string name="video_recommend_upload">推荐上传</string>
     <string name="no_file">没有文件</string>
-    <string name="video_publish_hint">完善视频描述，视频更受欢迎！</string>
+    <string name="video_publish_hint">在此输入视频描述信息</string>
+    <string name="video_publish_hint2">完善描述</string>
     <string name="video_comment_topic">#添加话题#</string>
     <string name="uploading_video">正在上传视频…</string>
-    <string name="video_comment_limit">还可输%1$s字</string>
-    <string name="bind_phone_dialog_tip">上传视频可以参与视频热度排名，有机会赢取大奖。若不绑定手机，我们将无法通知您中奖信息！</string>
+    <string name="video_comment_limit">还可输入%1$s字</string>
+    <string name="bind_phone_dialog_tip">上传视频可以参与活动，有机会赢取大奖。若不绑定手机，我们将无法通知你中奖信息！</string>
     <string name="bind_phone_dialog_bind">马上绑定</string>
     <string name="bind_phone_dialog_cancle">不绑定，放弃奖品</string>
     <string name="video_data_consumption_dialog_title">流量使用提醒</string>
-    <string name="video_data_consumption_dialog_message">您正在使用数据流量，使用流量上传将消耗%1$s流量。</string>
+    <string name="video_data_consumption_dialog_message">你正在使用数据流量，使用流量上传将消耗%1$s流量。</string>
     <string name="video_data_consumption_confirm">使用流量上传</string>
     <string name="video_data_consumption_cancel">取消</string>
     <string name="video_tag_search_lead">#</string>
     <string name="video_comment_hint">点击选择话题</string>
     <string name="video_tag_search_hint">自定义话题</string>
+    <string name="upload_video_failed_progress">"Opps:(发布失败，点击立即重试>>"</string>
+    <string name="upload_video_failed_external_progress">"发布失败，换个视频试试吧~"</string>
+    <string name="upload_video_success_progress">"\\(^o^)/视频发布成功！"</string>
+    <string name="upload_video_failed">上传失败</string>
+    <string name="upload_video_success">上传成功</string>
 
     <!--search-->
     <string name="search_file_type_picture">图片</string>
@@ -228,6 +258,7 @@
     <string name="search_file_type_other">其他项</string>
 
     <string name="wechat_video">%s短视频</string>
+    <string name="load_more">查看更多</string>
     <string name="notification_name_combine"><![CDATA[zh_cn=%1$s&zh_tw=%2$s&=%3$s]]></string>
     <string name="video_upload_item_title">%1$s (%2$s)</string>
     <string name="video_upload_item_more">查看更多（%1$s）</string>
@@ -236,7 +267,7 @@
     <string name="upload_notification_failed">上传视频失败</string>
     <string name="upload_notification_failed_content">点击重试</string>
     <string name="upload_notification_success">上传视频成功</string>
-    <string name="upload_notification_success_content">审核通过将展示给所有用户，点击查看</string>
+    <string name="upload_notification_success_content">审核通过后将展示给所有用户，立即查看</string>
     <string name="upload_notification_title">正在上传视频</string>
     <string name="upload_notification_progress">上传进度%1$s%%</string>
     <string name="upload_external_notification_title">正在努力发布中，请稍等</string>
@@ -260,8 +291,15 @@
     <string name="video_comment_publish">发布</string>
     <string name="video_tag_search_title">选择话题</string>
 
-    <string name="other_user_video_tab">上传的视频</string>
-    <string name="other_user_topic_tab">关注的话题</string>
+    <string name="other_user_upload_tab">上传</string>
+    <string name="other_user_like_tab">喜欢</string>
+    <string name="other_user_topic_tab">话题</string>
+    <string name="other_user_follow_tab">关注</string>
+    <string name="other_user_fans_tab">粉丝</string>
+    <string name="other_user_topic_count">%d个话题</string>
+    <string name="other_user_fans_count">%d个粉丝</string>
+    <string name="other_user_video_count">%d个视频</string>
+    <string name="other_user_follow_count">%d个人</string>
     <string name="add_one">+1</string>
     <string name="comment_hint">骚年，来一发评论吧！</string>
     <string name="send_comment">发送</string>
@@ -280,16 +318,16 @@
     <string name="new_comments">最新评论</string>
     <string name="origin_name">%1$s：</string>
     <string name="choose_report_comment_reason">请选择举报原因：</string>
-    <string name="remote_video_report_success">感谢您的反馈，我们会尽快处理</string>
+    <string name="remote_video_report_success">感谢你的反馈，我们会尽快处理</string>
 
     <string name="backup_checkbox_msg">以后帮我自动备份，备份完成提醒我</string>
     <string name="make_private">设为私密</string>
     <string name="confirm">确定</string>
-    <string name="already_liked">您已点赞</string>
-    <string name="user_no_video_tip">还没上传视频</string>
-    <string name="mobile_network_dialog_title">您正在使用非WiFi网络</string>
-    <string name="mobile_network_dialog_tip">您正在使用移动网络，在线播放将会耗费您的一些流量，产生流量费用</string>
-    <string name="mobile_network_dialog_tip2">您正在使用移动网络播放视频，可能产生流量费用</string>
+    <string name="already_liked">你已点赞</string>
+    <string name="user_no_video_tip">暂无视频</string>
+    <string name="mobile_network_dialog_title">你正在使用非WiFi网络</string>
+    <string name="mobile_network_dialog_tip">你正在使用移动网络，在线播放将会耗费你的一些流量，产生流量费用</string>
+    <string name="mobile_network_dialog_tip2">你正在使用移动网络播放视频，可能产生流量费用</string>
     <string name="mobile_network_dialog_cancle">取消观看</string>
     <string name="mobile_network_dialog_confirm">继续播放</string>
     <string name="topic_winners">往期获奖名单</string>
@@ -300,7 +338,224 @@
     <string name="open_private_folder">↑正在开启私密文件夹↑</string>
     <string name="file_loading">正在载入&#8230;</string>
     <string name="xiaomi_btn_str">小米</string>
-    <string name="login_account_bind_xm">使用小米帐号</string>
-    <string name="browsing_around">随便看看</string>
+    <string name="login_account_bind_xm">绑定小米帐号</string>
+    <string name="browsing_around">随便看看&#160;></string>
+    <string name="goto_surf">开启快盘之旅！</string>
+
+    <string name="user_no_follow_user">没有关注任何人</string>
+    <string name="user_no_follow_topic">没有关注任何话题</string>
+    <string name="user_no_liked_video_tip">你点赞的视频会出现在这里</string>
+    <string name="other_user_no_liked_video_tip">没有喜欢的视频</string>
+    <string name="other_user_no_follow_tip">暂无关注的人</string>
+    <string name="user_no_fans_tip">没有粉丝</string>
+    <string name="other_user_no_fans_tip">ta还没有粉丝，来成为第一个粉丝吧</string>
+    <string name="dislike_video">不感兴趣</string>
+    <string name="dislike_toast">将为你减少推荐类似的视频</string>
+    <string name="like_toast_1">将为你推荐更多相关的视频</string>
+    <string name="like_toast_2">赞过的视频，可以在个人中心查看</string>
+    <string name="like_toast_3">登录后可在个人中心查看赞过的视频</string>
+    <string name="guide_page_one_text">汇聚全网最有料短视频，各种猛料、\n爆料、笑料第一时间为你定制推送！</string>
+    <string name="guide_page_two_text">看视频得金币，吐槽也能得金币！\n金币滚滚来，轻松开宝箱赢大奖！</string>
+    <string name="guide_page_three_hint">新用户见面礼，土豪金色宝箱免费送！\n快快登录领取，说不定大奖就是你的！</string>
+    <string name="login_and_hamber_egg">登录开宝箱</string>
+    <string name="not_login_browse_around">放弃宝箱，随便看看&#160;></string>
+    <string name="first_upload_video_tip">好标题可以让你的视频更受欢迎</string>
+    <string name="splash_tip">奇趣生活从这里开始</string>
+    <string name="dialog_hammer_egg_hint">恭喜你！获得一枚新手金蛋！\n\t快砸开看看里面有什么~</string>
+    <string name="hammer_egg">砸金蛋</string>
+    <string name="egg_hammered_hint">恭喜你获得%s金币</string>
+    <string name="hammer_egg_mark">%s金币</string>
+    <string name="fetch_mark">领取</string>
+    <string name="fetch_mark_success">金币已存入你的账户,可在我的金币页面查看</string>
+    <string name="interest_recommend">兴趣推荐</string>
+    <string name="recommend_topic">推荐关注话题</string>
+    <string name="recommend_user">推荐关注用户</string>
+    <string name="no_follow_user_or_topic">没有关注的人或话题</string>
+    <string name="next_recommend">换一换</string>
+    <string name="network_dialog_checkbox_tip">不再提醒</string>
+
+    <string name="activity_parse_video_title">粘贴视频地址</string>
+    <string name="video_parse_btn">开始解析</string>
+    <string name="video_parsing_btn">正在解析…</string>
+    <string name="video_parse_hint">支持快手、秒拍、微博、优酷、微信等APP的链接地址</string>
+    <string name="video_parse_timeout">解析超时，请重试</string>
+    <string name="video_parse_error_repeated">请不要多次上传重复视频</string>
+    <string name="video_parse_success">解析成功</string>
+    <string name="video_parse_error_unknown">暂不支持此地址，换个资源试试</string>
+    <string name="upload_video_forbidden">请不要连续上传相同的视频</string>
+    <string name="file_not_exist">文件不存在</string>
+    <string name="album_name">每日精选：%s</string>
+    <string name="album_creator">%s 创建</string>
+
+    <!-- my gold -->
+    <string name="title_my_gold">我的金币</string>
+    <string name="action_prize_record">中奖记录</string>
+    <string name="action_gold_record">金币记录</string>
+    <string name="title_gold_record">金币记录</string>
+    <string name="title_prize_record">中奖记录</string>
+    <string name="no_gold_record">你还没有金币记录</string>
+    <string name="no_prize_record">你还没有中过奖，请再接再厉！</string>
+    <string name="increase_gold">+ %d 金币</string>
+    <string name="decrease_gold">- %d 金币</string>
+    <string name="history_record">历史记录</string>
+    <string name="prize_record_desc">%1$s 获得%2$s</string>
+    <string name="launch_gold_tips">过去%1$s，你又赚了%2$d金币，共有%3$d金币</string>
+    <string name="sign_gold_tips">签到成功 +%d 金币</string>
+    <string name="play_gold_tips">完整观看视频 +%d 金币</string>
+    <string name="share_gold_tips">分享视频成功 +%d 金币</string>
+    <string name="comment_gold_tips">评论成功 +%d 金币</string>
+    <string name="upload_gold_tips">上传视频成功 +%d 金币</string>
+    <string name="follow_gold_tips">成为“关注达人” +%d 金币</string>
+    <string name="gold">金币</string>
+    <string name="daily_task">每日任务</string>
+    <string name="new_task">新手任务</string>
+    <string name="task_sign_in">马上签到</string>
+    <string name="task_already_sign_in">已签到</string>
+    <string name="task_signing">正在签到…</string>
+    <string name="no_upper_limit">无上限</string>
+    <string name="task_new_user_unfinish">马上领取</string>
+    <string name="task_new_user_finish">已领取</string>
+    <string name="task_new_user_getting">正在领取…</string>
+    <string name="task_followed">已关注</string>
+    <string name="get_prize">领取奖励</string>
+    <string name="get_prize_again">再来一次</string>
+    <string name="prize_got">奖励已领取</string>
+    <string name="unpack_box_text">点击进入金币商城</string>
+    <string name="unpack_box_gold_not_enough">还有%d金币才能开宝箱，快去做任务吧！</string>
+    <string name="unpack_box">开启宝箱</string>
+    <string name="unpacking_box">正在开启…</string>
+    <string name="unpack_box_tips">开启一次将花费%d金币</string>
+    <string name="lose_prize_tips">再接再厉，换个姿势再来一次</string>
+    <string name="get_prize_tips1">实物奖品请加QQ群 562456612 领取</string>
+    <string name="get_prize_tips2">可随时在金币记录中查看</string>
+
+    <string name="claim_acquire_more">赚金币</string>
+    <string name="claim_own_points">你有%1$s金币，每次认领将使用%2$s金币</string>
+    <string name="claim_video">抢</string>
+    <string name="claim_video_locking">认领中…</string>
+    <string name="claim_video_already_locked">已被认领</string>
+
+    <string name="setting_message_notify">消息通知</string>
+    <string name="setting_account_bind">帐号绑定</string>
+    <string name="setting_about">关于</string>
+    <string name="setting_feedback">反馈</string>
+    <string name="qq_group">QQ交流群：562456612</string>
+    <string name="phone_num">手机号</string>
+    <string name="bind">绑定</string>
+    <string name="common_setting">设置</string>
+    <string name="user_feedback">用户反馈</string>
+    <string name="tip">提示</string>
+    <string name="unbind_account">确定解除%s绑定？</string>
+    <string name="one_account_bind_needed">至少要绑定一个帐号</string>
+    <string name="claim_video_success">认领成功</string>
+    <string name="claim_video_already_claimed">该视频已经被认领，下次下手要快一些</string>
+    <string name="claim_video_failure">认领不成功，请稍后重试</string>
+    <string name="claim_operation_too_frequently">你的操作过快，请稍后重试</string>
+    <string name="claim_remind_dialog_title">提示</string>
+    <string name="claim_remind_dialog_message">返回将放弃认领此视频哦！</string>
+    <string name="claim_remind_dialog_confirm">不放弃</string>
+    <string name="claim_remind_dialog_cancel">我想再看看别的</string>
+    <string name="claim_no_video">没有可认领的视频</string>
+
+    <string name="user_setting_follow_new_msg">关注的人有新动态通知</string>
+    <string name="user_setting_followed_new_msg">被关注通知</string>
+    <string name="user_setting_followed_new_msg_tip">有人关注了你，将通知你</string>
+    <string name="user_setting_follow_new_msg_tip">关注的人产生了新的视频，将通知你</string>
+    <string name="user_info_setting">个人信息编辑</string>
+    <string name="msg_notify_setting">消息通知设置</string>
+    <string name="click_to_login">点击登录</string>
+    <string name="click_to_login_msg">登录后可以赚金币，开宝箱，赢大奖</string>
+    <string name="user_icon">头像</string>
+    <string name="user_nickname">昵称</string>
+    <string name="user_nickname_limit">昵称必须为4-20个字符</string>
+    <string name="user_sex">性别</string>
+    <string name="user_sign">个人签名</string>
+    <string name="user_sign_limit">还可以输入%d个字</string>
+    <string name="male">男</string>
+    <string name="female">女</string>
+    <string name="upload_avatar_local">本地上传</string>
+    <string name="upload_avatar_camera">相机拍摄</string>
+    <string name="upload_user_photo">上传头像</string>
+    <string name="update_loading">正在保存&#8230;</string>
+    <string name="update_failed">保存失败，请稍后重试</string>
+    <string name="upload_avatar_loading">正在上传&#8230;</string>
+    <string name="upload_avatar_failed">上传失败，请稍后重试</string>
+    <string name="unbind">解绑</string>
+    <string name="video_album">视频专辑</string>
+    <string name="choose_login_type">选择登录方式</string>
+    <string name="use_xiaomi_account">小米登录</string>
+    <string name="unlogin">你未登录，请先登录</string>
+    <string name="bind_need_to_login">绑定帐号，请先登录</string>
+    <string name="open_treasure_box">开启宝箱</string>
+    <string name="claim_video_failure_not_enough_gold">金币不够了，先去赚点金币吧</string>
+    <string name="first_claim_video_tip">点这里认领你的第一个视频！认领后视频会给你源源不断地产生金币~</string>
+    <string name="claim_video_unlogin">登录后可以开宝箱、赚金币、领视频！</string>
+    <string name="splash_copyright">copyright@xunlei</string>
+    <string name="user_cancel">用户取消</string>
+    <string name="unbind_fail">解绑失败</string>
+    <string name="unbind_success">解绑成功</string>
+    <string name="treasure_box_openning">宝箱开启中</string>
+    <string name="upload_pasteUrl">粘贴视频地址</string>
+    <string name="wechat_login">微信登录</string>
+    <string name="phone_login">手机登录</string>
+    <string name="user_agreement"><u>有料用户服务协议</u></string>
+    <string name="gold_not_enough">金币不够了，先去赚点金币吧</string>
+    <string name="newer_treasure_box_hint">快打开看看里面有什么~</string>
+    <string name="user_agreement_title">有料用户服务协议</string>
+    <string name="about_rights">\t\t\t\t\t迅雷公司&#160;版权所有\nCopyright©2011-2016 Xunlei\n\t\t\t\t\tAll&#160;Rights&#160;Reserved.</string>
+    <string name="user_no_net_retry_tip">网络好像有点问题，请点击重试</string>
+    <string name="xiaomi_btn_bind">小米帐号</string>
+    <string name="wechat_btn_bind">微信帐号</string>
+    <string name="help">帮助</string>
+    <string name="permission_lack_tip">当前应用缺少必要权限。请在设置-应用-有料-权限中开启存储空间和电话权限，以正常使用有料功能。</string>
+    <string name="quit">退出</string>
+    <string name="settings">去设置</string>
+    <string name="permission_lacks">缺少权限</string>
+    <string name="permission_all_granted">必要权限都已授权</string>
+    <string name="permission_not_granted_tip">权限尚未授权，应用将关闭</string>
+    <string name="update_tip_when_not_granted">尚未授权，无法检查跟新</string>
+    <string name="read_sdcard_permission_not_granted_tip">尚未授权，无法读取到数据</string>
+    <string name="lack_permission_app_will_close">缺少必要权限，应用将关闭</string>
+
+    <string name="switch_server_title">点击切换服务器地址</string>
+    <string name="server_type_test">测试</string>
+    <string name="server_type_pre">定版</string>
+    <string name="server_type_release">线上</string>
+    <string name="switch_server_success">成功切换到%s，请先清空应用数据后再使用</string>
+    <string name="weibo_platform">微博</string>
+    <string name="weibo_not_installed">请先安装微博</string>
+    <string name="weibo_share_success">分享成功</string>
+    <string name="weibo_share_canceled">分享取消</string>
+    <string name="weibo_share_failed">分享失败</string>
+    <string name="share_title_01">全网热播的小视频，删前速看</string>
+    <string name="share_title_02">这个视频小很有料，看完我惊呆了</string>
+    <string name="share_title_03">快来，这个视频再不看就没有了</string>
+    <string name="share_title_04">震惊网友的小视频，分享给你…</string>
+    <string name="share_title_05">这个小视频好赞</string>
+    <string name="share_title_05_tile">，一起来看</string>
+    <string name="share_title_06">身边人都在看的</string>
+    <string name="share_title_06_a">火爆视频</string>
+    <string name="share_title_06_b">，就差你了</string>
+    <string name="share_title_07">上传视频送大奖，快来「有料」</string>
+    <string name="share_title_08">这个小视频我给满分</string>
+    <string name="share_title_08_a">，你也来看</string>
+    <string name="share_title_09">我正在看这个小视频，分享给你</string>
+    <string name="share_title_appender"> | M次播放</string>
+    <string name="permission_request">权限申请</string>
+    <string name="phone_permission_lack_tip">有料使用电话权限确定本机号码和设备ID，以保证帐号登录的安全性。有料不会拨打其它号码或终止通话。\n请在设置-应用-有料-权限中开启电话权限，以正常登录有料。</string>
+    <string name="sdcard_permission_lack_tip">在设置-应用-有料-权限中开启存储空间权限，以正常使用有料功能。</string>
+    <string name="storage">存储</string>
+    <string name="phone">电话</string>
+    <string name="qq_login">QQ登录</string>
+    <string name="use_weibo_account">微博登录</string>
+    <string name="user_guide_login_tip">马上加入超火爆小视频社区</string>
+    <string name="user_guide_more_login">更多登录方式</string>
+    <string name="weibo_auth_success">微博授权成功</string>
+    <string name="weibo_account">微博帐号</string>
+    <string name="qq_account">QQ帐号</string>
+    <string name="share_from_youliao">（分享自#有料# @有料Video）丨 </string>
+    <string name="detail">详情</string>
+    <string name="please_login_weibo_first">请先登录微博</string>
+    <string name="get_account_list_fail">获取账号绑定信息失败</string>
 
 </resources>

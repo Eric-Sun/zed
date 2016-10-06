@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="13dp">
+
+    <EditText
+        android:id="@+id/edit_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="left"
+        android:imeOptions="actionDone"
+        android:inputType="textMultiLine"
+        android:lines="6"
+        android:maxLength="140"
+        android:padding="10dp"
+        android:textColor="@color/text_color_black_90alpha"
+        android:textSize="@dimen/secondary_text_size" />
+
+    <TextView
+        android:id="@+id/desc_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/text_color_black_50alpha"
+        android:textSize="@dimen/small_text_size" />
+</LinearLayout>
