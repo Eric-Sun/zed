@@ -28,7 +28,6 @@ public class ZedRequestBase<T> extends RequestBase<T> {
 //            throw new RuntimeException("Method Name MUST NOT be NULL");
 //        }
 
-        String method = "http://123.56.86.200:8080/";
 //        if (!method.startsWith("http://") && !method.startsWith("https://")) {
 //            method = ApiConstant.getBaseMcpApiUrl() + "api/" + method.replace('.', '/');
 //        }
@@ -39,7 +38,7 @@ public class ZedRequestBase<T> extends RequestBase<T> {
 //        }
 
         String httpMethod = params.getString(ApiConstant.KEY_HTTP_METHOD);
-        httpMethod = "POST";
+        String act = params.getString(ApiConstant.KEY_METHOD);
         params.remove(ApiConstant.KEY_HTTP_METHOD);
         params.remove(ApiConstant.KEY_METHOD);
 
@@ -51,12 +50,11 @@ public class ZedRequestBase<T> extends RequestBase<T> {
 //        params.putString("callId", String.valueOf(System.currentTimeMillis()));
 //        params.putString("appVersion", CommonParam.RA2_VERSION);
 //        params.putString("gz", "1");
-        params.putString("act", "dz.list");
-        params.putString("args", "{}");
+        params.putString("act", act);
         params.putString("deviceId", DeviceIdGenerator.getDeviceId(ZedApplication.getInstance()));
 //        params.putString("sig", getSig(params, ApiConstant.SECRET_KEY));
 
-        params.putString(ApiConstant.KEY_METHOD, method);
+        params.putString(ApiConstant.KEY_METHOD, ApiConstant.JAX_RELEASE_URL);
         params.putString(ApiConstant.KEY_HTTP_METHOD, httpMethod);
 
         return params;

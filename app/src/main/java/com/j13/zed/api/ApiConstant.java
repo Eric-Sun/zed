@@ -12,6 +12,8 @@ public class ApiConstant {
     private static String BASE_API_URL = null;
     private static String BASE_MCP_API_URL = null;
 
+    public static final String JAX_RELEASE_URL="http://123.56.86.200:8080/api";
+
     // 测试
     private static final String API_TEST_URL = "http://192.168.111.103:8080/";
     private static final String NEW_API_TEST_URL = "https://test.api.bchbc.com/";

@@ -2,13 +2,12 @@ package com.j13.zed.dz;
 
 import android.content.Context;
 
-import com.j13.zed.api.dz.DZDataResponse;
+import com.alibaba.fastjson.JSON;
 import com.j13.zed.api.dz.DZListRequest;
 import com.j13.zed.api.dz.DZResponse;
 import com.j13.zed.api.InternetUtil;
 import com.j13.zed.util.thread.CustomThreadPool;
 import com.michael.corelib.internet.core.NetWorkException;
-import com.michael.corelib.internet.core.util.JsonUtils;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -52,14 +51,15 @@ public class DZManager {
                 try {
                     String json = InternetUtil.request(context, request);
 
-                    DZDataResponse response = JsonUtils.parse(json, DZDataResponse.class);
+                    List<DZResponse> response = JSON.parseArray(json, DZResponse.class);
 
-                    for (int i = 0; i < response.data.length; i++) {
-                        DZResponse dzResponse = response.data[i];
+
+                    for (int i = 0; i < response.size(); i++) {
+                        DZResponse dzResponse = response.get(i);
                         DZInfo dzInfo = new DZInfo();
-                        dzInfo.setContent(dzResponse.content);
-                        dzInfo.setUserName(dzResponse.userName);
-                        dzInfo.setImg(dzResponse.img);
+                        dzInfo.setContent(dzResponse.getContent());
+                        dzInfo.setUserName(dzResponse.getUserName());
+                        dzInfo.setImg(dzResponse.getImg());
                         dzInfoList.add(dzInfo);
                     }
 

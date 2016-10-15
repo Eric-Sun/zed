@@ -2,6 +2,7 @@ package com.j13.zed.api.dz;
 
 import com.j13.zed.api.ZedRequestBase;
 import com.michael.corelib.internet.core.annotations.HttpMethod;
+import com.michael.corelib.internet.core.annotations.RequiredParam;
 import com.michael.corelib.internet.core.annotations.RestMethodUrl;
 import com.michael.corelib.internet.core.annotations.StringRawResponse;
 
@@ -12,8 +13,5 @@ import com.michael.corelib.internet.core.annotations.StringRawResponse;
 @HttpMethod("POST")
 @StringRawResponse
 public class DZListRequest extends ZedRequestBase<String> {
-
-
-
 
 }

@@ -69,6 +69,7 @@ dependencies {
     compile 'com.growingio.android:vds-android:latest.release@aar'
     compile 'com.android.support:support-v4:23.2.1'
     compile 'com.orhanobut:logger:1.15'
+    compile group: 'com.alibaba', name: 'fastjson', version: '1.1.52.android'
     compile 'com.google.android.exoplayer:exoplayer:r1.5.10'
     compile files('libs/weiboSDKCore_3.1.4.jar')
 }

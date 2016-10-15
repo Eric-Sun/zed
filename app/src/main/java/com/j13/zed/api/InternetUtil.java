@@ -39,21 +39,21 @@ public class InternetUtil {
             if (context != null && BeanRequestFactory.createBeanRequestInterface(context.getApplicationContext()) != null) {
                 T response = BeanRequestFactory.createBeanRequestInterface(context.getApplicationContext()).request(request);
 
-                if (response != null && (response instanceof ResponseBase || response instanceof String)) {
-                    ServerErrorResponse errorResponse = null;
-                    if (response instanceof ResponseBase) {
-//                        errorResponse = parseError(((ResponseBase) response).getContent());
-                    } else if (response instanceof String) {
-                        errorResponse = parseError((String) response);
-                    }
-                    if (errorResponse != null && errorResponse.errorCode >= SYSTEM_ERROR_CODE_START
-                            && errorResponse.errorCode <= SYSTEM_ERROR_CODE_END) {
-//                        if (!request.isIgnoreResponse()) {
-//                            postServerErrorMsg(context, errorResponse);
-//                        }
-                        return null;
-                    }
-                }
+//                if (response != null && (response instanceof ResponseBase || response instanceof String)) {
+//                    ServerErrorResponse errorResponse = null;
+//                    if (response instanceof ResponseBase) {
+////                        errorResponse = parseError(((ResponseBase) response).getContent());
+//                    } else if (response instanceof String) {
+//                        errorResponse = parseError((String) response);
+//                    }
+//                    if (errorResponse != null && errorResponse.errorCode >= SYSTEM_ERROR_CODE_START
+//                            && errorResponse.errorCode <= SYSTEM_ERROR_CODE_END) {
+////                        if (!request.isIgnoreResponse()) {
+////                            postServerErrorMsg(context, errorResponse);
+////                        }
+//                        return null;
+//                    }
+//                }
                 return response;
             }
         } catch (NetWorkException exception) {
