@@ -4,7 +4,10 @@ import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 
+import com.j13.zed.Catagory;
+import com.j13.zed.Constants;
 import com.j13.zed.fragment.HotDZFragment;
+import com.j13.zed.fragment.MineFragment;
 
 public class ScrollFragmentAdapter extends BaseFragmentAdapter {
 
@@ -17,21 +20,38 @@ public class ScrollFragmentAdapter extends BaseFragmentAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        return new HotDZFragment();
+
+        if (position == 1) {
+            return new HotDZFragment();
+
+        } else {
+            return new MineFragment();
+        }
+
     }
 
     @Override
     public String makeFragmentName(int index) {
-        return "最热";
+        if (index == 1) {
+            return "最热";
+
+        } else {
+            return "我的";
+        }
     }
 
     @Override
     public int getCount() {
-        return 1;
+        return 2;
     }
 
     @Override
     public CharSequence getPageTitle(int position) {
-        return "最热";
+        if (position == 1) {
+            return "最热";
+
+        } else {
+            return "我的";
+        }
     }
 }

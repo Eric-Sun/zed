@@ -11,7 +11,7 @@
 
     </FrameLayout>
 
-    <com.xunlei.shortvideo.view.RefreshListView
+    <com.j13.zed.view.RefreshListView
         android:id="@+id/list_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -16,6 +16,7 @@ import com.j13.zed.helper.FileIconHelper;
 import com.j13.zed.helper.ProfileHeader;
 import com.j13.zed.user.User;
 import com.j13.zed.user.UserContext;
+import com.j13.zed.user.event.LoginSuccessEvent;
 import com.j13.zed.util.Constants;
 import com.j13.zed.util.DebugLog;
 import com.j13.zed.util.StringUtils;
@@ -25,7 +26,7 @@ import de.greenrobot.event.EventBus;
 
 public class MineFragment extends BaseMainFragment implements  View.OnClickListener,Constants {
 
-    private static final String TAG = "MineFragment";
+    private static final String TAG = "MineFragmentssss";
 
     private Activity mActivity;
     private FileIconHelper mFileIconHelper;
@@ -33,21 +34,7 @@ public class MineFragment extends BaseMainFragment implements  View.OnClickListe
     private View mContent;
     private ViewGroup mHeaderContainer;
     private ProfileHeader mHeader;
-    private TextView mPointNumTv;
-    private TextView mNewMsgNumTv;
-    private TextView mTopicNumTv;
-    private TextView mVideoNumTv;
-    private TextView mLikedNumTv;
-    private TextView mFollowNumTv;
-    private TextView mFansNumTv;
-
     private RefreshListView mListView;
-
-    private long mTopicCount;
-    private long mVideoCount;
-    private long mLikedCount;
-    private long mUserFollowCount;
-    private long mUserFansCount;
     private boolean isNeedLoad = true;
 
     @Override
@@ -58,13 +45,13 @@ public class MineFragment extends BaseMainFragment implements  View.OnClickListe
 
         mFileIconHelper = FileIconHelper.getInstance(mActivity);
 
-        EventBus.getDefault().register(this);
+//        EventBus.getDefault().register(this);
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        EventBus.getDefault().unregister(this);
+//        EventBus.getDefault().unregister(this);
     }
 
     @Override
@@ -94,23 +81,6 @@ public class MineFragment extends BaseMainFragment implements  View.OnClickListe
         mHeaderContainer = (ViewGroup) setupViewClick(mRootView, R.id.mine_header);
         mHeaderContainer.removeAllViewsInLayout();
         mHeaderContainer.addView(mHeader.getView());
-
-        setupViewClick(mContent, R.id.mine_msg_layout);
-        setupViewClick(mContent, R.id.mine_topic_layout);
-        setupViewClick(mContent, R.id.mine_video_layout);
-        setupViewClick(mContent, R.id.mine_follow_layout);
-        setupViewClick(mContent, R.id.mine_liked_layout);
-        setupViewClick(mContent, R.id.mine_fans_layout);
-        setupViewClick(mContent, R.id.mine_setting_layout);
-        setupViewClick(mContent, R.id.mine_point_layout);
-
-        mPointNumTv = (TextView) mContent.findViewById(R.id.mine_point_num);
-        mNewMsgNumTv = (TextView) mContent.findViewById(R.id.mine_msg_new);
-        mTopicNumTv = (TextView) mContent.findViewById(R.id.mine_topic_num);
-        mVideoNumTv = (TextView) mContent.findViewById(R.id.mine_video_num);
-        mLikedNumTv = (TextView) mContent.findViewById(R.id.mine_liked_num);
-        mFollowNumTv = (TextView) mContent.findViewById(R.id.mine_follow_num);
-        mFansNumTv = (TextView) mContent.findViewById(R.id.mine_fans_num);
 
         mListView.setOnRefreshListener(new RefreshListView.OnRefreshListener() {
             @Override
@@ -219,15 +189,15 @@ public class MineFragment extends BaseMainFragment implements  View.OnClickListe
 //        UserInfoManager.getInstance(mActivity).getUserInfo(UserContext.getInstance(mActivity).getLoginUid(), UserInfoEvent.FROM_MINE_USER_CENTER);
     }
 
-//    public void onEventMainThread(LoginSuccessEvent event) {
-//        DebugLog.d(TAG, "onEventMainThread  LoginSuccessEvent=" + event);
-//
-//        User user = UserContext.getInstance(mActivity).getCurrentUser();
-//        if (user != null) {
-//            loadUserInfo(user);
-//        }
-//        //load();
-//    }
+    public void onEventMainThread(LoginSuccessEvent event) {
+        DebugLog.d(TAG, "onEventMainThread  LoginSuccessEvent=" + event);
+
+        User user = UserContext.getInstance(mActivity).getCurrentUser();
+        if (user != null) {
+            loadUserInfo(user);
+        }
+        //load();
+    }
 
 
     private void loadUserInfo(User user) {

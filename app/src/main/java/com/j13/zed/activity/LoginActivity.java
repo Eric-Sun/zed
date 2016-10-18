@@ -10,6 +10,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.j13.zed.R;
+import com.j13.zed.user.OauthLoginManager;
+import com.j13.zed.user.ThirdPartyType;
 import com.j13.zed.util.DebugLog;
 import com.j13.zed.util.ToastManager;
 import com.j13.zed.view.TextImgCenterBtn;
@@ -70,7 +72,7 @@ public class LoginActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        EventBus.getDefault().register(this);
+//        EventBus.getDefault().register(this);
 
 //        if (getIntent() != null) {
 //            mTopicOrMine = getIntent().getStringExtra(TopicVideoActivity.EXTRA_TOPIC);
@@ -91,11 +93,11 @@ public class LoginActivity extends BaseActivity {
      * 加载视图组件
      */
     public void findViewById() {
-        mWechatLoginBtn = (TextImgCenterBtn) findViewById(R.id.btn_wechat_login);
+//        mWechatLoginBtn = (TextImgCenterBtn) findViewById(R.id.btn_wechat_login);
         mPhoneLoginBtn = (TextImgCenterBtn) findViewById(R.id.btn_phone_login);
         //mXiaomiLoginBtn = (TextImgCenterBtn) findViewById(R.id.btn_xiaomi_login);
         //mBrowsingAroundBtn = (TextView) findViewById(R.id.tv_browsing_around);
-        mXiaomiLoginTv = (TextView) findViewById(R.id.tv_xiaomi_login);
+//        mXiaomiLoginTv = (TextView) findViewById(R.id.tv_xiaomi_login);
 
         mLoginContainerLayout = (LinearLayout) findViewById(R.id.ll_login_container);
         mLoginLoadingLayout = (LinearLayout) findViewById(R.id.ll_login_loading);
@@ -106,13 +108,13 @@ public class LoginActivity extends BaseActivity {
      */
     public void initView() {
         //mXiaomiLoginBtn.setBtnContent(R.drawable.xm_icon, R.string.xiaomi_btn_str);
-        mWechatLoginBtn.setBtnContent(R.drawable.wechat_login, R.string.wechat_login);
+//        mWechatLoginBtn.setBtnContent(R.drawable.wechat_login, R.string.wechat_login);
         mPhoneLoginBtn.setBtnContent(R.drawable.phone_login, R.string.phone_login);
 
-        mWechatLoginBtn.setBackgroundResource(R.drawable.selector_login_wechat);
-        mPhoneLoginBtn.setBackgroundResource(R.drawable.selector_login_wechat);
+//        mWechatLoginBtn.setBackgroundResource(R.drawable.selector_login_wechat);
+//        mPhoneLoginBtn.setBackgroundResource(R.drawable.selector_login_wechat);
 
-        mWechatLoginBtn.setTextColor(getResources().getColor(R.color.text_color_primary));
+//        mWechatLoginBtn.setTextColor(getResources().getColor(R.color.text_color_primary));
         mPhoneLoginBtn.setTextColor(getResources().getColor(R.color.text_color_primary));
         //如果从闪屏页过来，则显示随便看看按钮
 //        if (SPLASH_TAG.equals(mTopicOrMine)) {
@@ -138,10 +140,8 @@ public class LoginActivity extends BaseActivity {
         mPhoneLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                OauthLoginManager.getInstance(LoginActivity.this).login(LoginActivity.this, ThirdPartyType.PHONE, ThirdPartyType.LOGIN_OPERATION, mTopicOrMine);
-//                LoginClick loginClick = LoginClick.build("phone");
-//                Hubble.onEvent(LoginActivity.this, loginClick);
-//                mLoginContainerLayout.setVisibility(View.GONE);
+                OauthLoginManager.getInstance(LoginActivity.this).login(LoginActivity.this, ThirdPartyType.PHONE, ThirdPartyType.LOGIN_OPERATION);
+                mLoginContainerLayout.setVisibility(View.GONE);
             }
         });
 //        //小米登陆监听器
@@ -238,7 +238,7 @@ public class LoginActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        EventBus.getDefault().unregister(this);
+//        EventBus.getDefault().unregister(this);
     }
 
     /*@Override

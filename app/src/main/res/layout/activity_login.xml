@@ -45,27 +45,27 @@
             </View>
         </LinearLayout>
 
-        <com.xunlei.shortvideo.view.TextImgCenterBtn
-            android:id="@+id/btn_wechat_login"
-            android:layout_width="193dp"
-            android:layout_height="36dp"
-            android:layout_marginTop="38dp" />
+        <!--<com.j13.zed.view.TextImgCenterBtn-->
+            <!--android:id="@+id/btn_wechat_login"-->
+            <!--android:layout_width="193dp"-->
+            <!--android:layout_height="36dp"-->
+            <!--android:layout_marginTop="38dp" />-->
 
-        <com.xunlei.shortvideo.view.TextImgCenterBtn
+        <com.j13.zed.view.TextImgCenterBtn
             android:id="@+id/btn_phone_login"
             android:layout_width="193dp"
             android:layout_height="36dp"
             android:layout_marginTop="23dp" />
 
-        <TextView
-            android:id="@+id/tv_xiaomi_login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/use_xiaomi_account"
-            android:layout_marginBottom="23dp"
-            android:layout_marginTop="38dp"
-            android:textColor="#999999"
-            android:textSize="12sp"/>
+        <!--<TextView-->
+            <!--android:id="@+id/tv_xiaomi_login"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="@string/use_xiaomi_account"-->
+            <!--android:layout_marginBottom="23dp"-->
+            <!--android:layout_marginTop="38dp"-->
+            <!--android:textColor="#999999"-->
+            <!--android:textSize="12sp"/>-->
     </LinearLayout>
 
     <LinearLayout

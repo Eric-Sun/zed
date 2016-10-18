@@ -6,6 +6,8 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.util.Config;
 
+import com.j13.zed.user.UserContext;
+import com.j13.zed.util.AppUtils;
 import com.j13.zed.util.Constants;
 import com.j13.zed.util.DebugLog;
 import com.michael.corelib.config.CoreConfig;
@@ -35,15 +37,12 @@ public class ZedApplication extends Application {
 
 //        CoreConfig.init(this, Config.DEBUG, Config.ROOT_PATH, Constants.LOG_FILE_NAME);
 //
-//        if (!AppUtils.isService(sApplication)) {
+        if (!AppUtils.isService(sApplication)) {
 //            PushConstants.init();
 //            RequestErrorHandler.getInstance().init(this);
-//            AdStatHelper.getInstance().init(this);
-//            UserContext.getInstance(this).initLogin();
-////            VideoItemManager.getInstance(this).initLoad();
-//
-//            GrowingIO.startTracing(this, Constants.GROWINGIO_APPID);
-//            GrowingIO.setScheme(Constants.GROWINGIO_SCHEME);
+            UserContext.getInstance(this).initLogin();
+//            VideoItemManager.getInstance(this).initLoad();
+
 //            if(!PermissionHelper.lackPermission(this, Manifest.permission.READ_PHONE_STATE)){  //不缺少READ_PHONE_STATE权限，才执行
 //                initHubble();
 //                initConfig();
@@ -53,7 +52,7 @@ public class ZedApplication extends Application {
 //                initMiPush();
 //                initVideoManager();
 //            }
-//        }
+        }
 
 //        //init Hubble Agent
 //        HubbleAgent.init(sApplication, APP_ID, SECRET_KEY, getChannelId());
@@ -86,7 +85,7 @@ public class ZedApplication extends Application {
 
 //    private PermissionHelper mPermissionChecker;
 
-    public void initData(){
+    public void initData() {
     }
 
 

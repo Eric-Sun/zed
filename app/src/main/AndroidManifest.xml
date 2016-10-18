@@ -21,6 +21,15 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name="com.j13.zed.activity.LoginActivity"
+            android:label=""
+            android:screenOrientation="portrait"
+            android:theme="@style/MyDialogStyle" />
+        <activity
+            android:name="com.j13.zed.activity.PhoneNumLoginActivity"
+            android:label="@string/phone_login_title"
+            android:screenOrientation="portrait" />
 
     </application>
 

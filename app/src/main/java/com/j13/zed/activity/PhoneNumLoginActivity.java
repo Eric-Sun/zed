@@ -14,8 +14,11 @@ import android.widget.TextView;
 
 
 import com.j13.zed.R;
+import com.j13.zed.user.OauthLoginManager;
 import com.j13.zed.user.ThirdPartyType;
 import com.j13.zed.user.UserContext;
+import com.j13.zed.user.event.LoginResultEvent;
+import com.j13.zed.user.event.LoginSuccessEvent;
 import com.j13.zed.util.AppUtils;
 import com.j13.zed.util.Constants;
 import com.j13.zed.util.NetworkUtils;
@@ -39,20 +42,17 @@ public class PhoneNumLoginActivity extends BaseActivity implements Constants {
     public static final int WAIT_NUM = 60;
 
     private EditText mPhoneNumEt;
-    private EditText mPhoneCodeEt;
-    private Button mGetCodeBtn;
+    private EditText passwordEt;
     private Button mLoginBtn;
     private TextView mBindTipTv;
     private TextView mBindSkipTv;
     private ProgressDialog mWaitDialog;
 
     private String mPhoneNum;
-    private String mPhoneCode;
+    private String password;
     private HashMap<String, Integer> mPhoneNumRecord = new HashMap<String, Integer>();
     private HashMap<String, Integer> mPhoneCodeRecord = new HashMap<String, Integer>();
 
-
-    private TextHandler mHandler;
     private int mCountNum = WAIT_NUM;
     private boolean mIsSendingCode = false;
     private boolean mIsBind = false;
@@ -70,7 +70,6 @@ public class PhoneNumLoginActivity extends BaseActivity implements Constants {
         super.onCreate(savedInstanceState);
 
         EventBus.getDefault().register(this);
-        mHandler = new TextHandler();
 
         Intent intent = getIntent();
         if (intent != null && ThirdPartyType.BIND_OPERATION.equals(getIntent().getStringExtra(KEY_TYPE))) {
@@ -92,9 +91,7 @@ public class PhoneNumLoginActivity extends BaseActivity implements Constants {
         }
 
         mPhoneNumEt = (EditText) findViewById(R.id.phone_num_et);
-        mPhoneCodeEt = (EditText) findViewById(R.id.code_et);
-        mGetCodeBtn = (Button) findViewById(R.id.code_get_btn);
-        setCodeBtnEnable(false);
+        passwordEt = (EditText) findViewById(R.id.password);
         mLoginBtn = (Button) findViewById(R.id.phone_login_btn);
         setLoginBtnEnable(false);
         mBindTipTv = (TextView) findViewById(R.id.phone_bind_tip);
@@ -107,22 +104,22 @@ public class PhoneNumLoginActivity extends BaseActivity implements Constants {
             mBindTipTv.setVisibility(View.GONE);
             mBindSkipTv.setVisibility(View.GONE);
         }
-        if (mBindPhone != null){
+        if (mBindPhone != null) {
             mBindSkipTv.setVisibility(View.GONE);
             mLoginBtn.setText(R.string.bind);
         }
         initListener();
     }
 
-    private void setCodeBtnEnable(boolean isEnable) {
-        if (isEnable) {
-            mGetCodeBtn.setEnabled(true);
-            mGetCodeBtn.setTextColor(getResources().getColor(R.color.text_color_primary));
-        } else {
-            mGetCodeBtn.setEnabled(false);
-            mGetCodeBtn.setTextColor(getResources().getColor(R.color.phone_code_btn_disable_text));
-        }
-    }
+//    private void setCodeBtnEnable(boolean isEnable) {
+//        if (isEnable) {
+//            mGetCodeBtn.setEnabled(true);
+//            mGetCodeBtn.setTextColor(getResources().getColor(R.color.text_color_primary));
+//        } else {
+//            mGetCodeBtn.setEnabled(false);
+//            mGetCodeBtn.setTextColor(getResources().getColor(R.color.phone_code_btn_disable_text));
+//        }
+//    }
 
     private void setLoginBtnEnable(boolean isEnable) {
         if (isEnable) {
@@ -148,28 +145,7 @@ public class PhoneNumLoginActivity extends BaseActivity implements Constants {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (isValidPhone(mPhoneNum) && !mIsSendingCode) {
-                    setCodeBtnEnable(true);
-                } else {
-                    setCodeBtnEnable(false);
-                }
-            }
-        });
-
-        mPhoneCodeEt.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                mPhoneCode = s.toString();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                if (isValidPhone(mPhoneNum) && isValidPhoneCode(mPhoneCode)) {
+                if (isValidPhone(mPhoneNum)) {
                     setLoginBtnEnable(true);
                 } else {
                     setLoginBtnEnable(false);
@@ -177,32 +153,23 @@ public class PhoneNumLoginActivity extends BaseActivity implements Constants {
             }
         });
 
-        mGetCodeBtn.setOnClickListener(new View.OnClickListener() {
+        passwordEt.addTextChangedListener(new TextWatcher() {
             @Override
-            public void onClick(View v) {
-                //AnalyticsAgent.trackEvent(new LoginPhoneClickData("code"));
-                if (!isValidPhone(mPhoneNum)) {
-                    ToastManager.show(PhoneNumLoginActivity.this, R.string.phone_num_format_tip);
-                    return;
-                }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-                Integer count = mPhoneNumRecord.get(mPhoneNum);
-                if (count != null && count > 2) {
-                    ToastManager.show(PhoneNumLoginActivity.this, R.string.phone_get_code_tip);
-                    return;
-                }
+            }
 
-//                String type = GetPhoneCodeRequest.TYPE_LOGIN_BY_MOBILE;
-//                if (mIsBind) {
-//                    type = GetPhoneCodeRequest.TYPE_BIND_MOBILE;
-//                }
-//                OauthLoginManager.getInstance(PhoneNumLoginActivity.this).getPhoneCode(mPhoneNum, type);
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                password = s.toString();
+            }
 
-                setCodeBtnEnable(false);
-                mIsSendingCode = true;
-                mHandler.sendEmptyMessage(0);
+            @Override
+            public void afterTextChanged(Editable s) {
+
             }
         });
+
 
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -218,29 +185,14 @@ public class PhoneNumLoginActivity extends BaseActivity implements Constants {
                     return;
                 }
 
-                if (!isValidPhoneCode(mPhoneCode)) {
-                    ToastManager.show(PhoneNumLoginActivity.this, R.string.phone_code_err);
-                    return;
-                }
-
-                Integer count = mPhoneCodeRecord.get(mPhoneCode);
-                if (count != null && count > 4) {
-                    ToastManager.show(PhoneNumLoginActivity.this, R.string.phone_valid_code_tip);
-                    return;
-                }
 
                 showWaitDialog(getResources().getString(R.string.loading));
 //                if (mIsBind) {
 //                    OauthLoginManager.getInstance(PhoneNumLoginActivity.this).bindByPhone(mPhoneNum, mPhoneCode);
 //                } else {
-//                    OauthLoginManager.getInstance(PhoneNumLoginActivity.this).loginByPhone(mPhoneNum, mPhoneCode);
+                OauthLoginManager.getInstance(PhoneNumLoginActivity.this).loginByPhone(mPhoneNum, password);
 //                }
 
-                if (count == null) {
-                    mPhoneCodeRecord.put(mPhoneCode, 1);
-                } else {
-                    mPhoneCodeRecord.put(mPhoneCode, ++count);
-                }
             }
         });
 
@@ -296,43 +248,31 @@ public class PhoneNumLoginActivity extends BaseActivity implements Constants {
         }
     }
 
-//    public void onEventMainThread(LoginResultEvent event) {
-//        DebugLog.d(TAG, "onEventMainThread LoginResultEvent=" + event);
-//        hideWaitDialog();
-//        if (event.resultCode == LoginResultEvent.RESULT_ERROR || event.resultCode == OauthLoginManager.ACCOUNT_HAS_USED_ERR) {
-//            ToastManager.show(this, R.string.login_failed_tip);
-//            return;
-//        } else if (event.resultCode == OauthLoginManager.PHONE_CODE_ERR) {
-//            ToastManager.show(this, R.string.phone_code_err);
-//            return;
-//        }
-//
-//        if (event.resultCode != LoginResultEvent.RESULT_OK) {
-//            DebugLog.d(TAG, "onEventMainThread LoginResultEvent no ok");
-//            return;
-//        }
-//
-//        ToastManager.show(this, R.string.login_success_tip);
-//
-//        if (OauthLoginManager.PHONE_LOGIN_TYPE.equals(event.loginType)) {
-//            if (UserContext.getInstance(this).isLogin()) {
+    public void onEventMainThread(LoginResultEvent event) {
+        hideWaitDialog();
+        if (event.resultCode != OauthLoginManager.RESULT_OK) {
+            ToastManager.show(this, R.string.login_failed_tip);
+            return;
+        }
+
+        ToastManager.show(this, R.string.login_success_tip);
+
+        if (OauthLoginManager.PHONE_LOGIN_TYPE.equals(event.loginType)) {
+            if (UserContext.getInstance(this).isLogin()) {
 //                if (UserContext.getInstance(this).isExistOtherAccount()) {
-//                    LoginSuccessEvent successEvent = new LoginSuccessEvent();
-//                    EventBus.getDefault().post(successEvent);
-//
-//                    if (!MINE_TAG.equals(mTopicOrMine)) {
-//                        //UploadActivity.startUploadActivity(PhoneNumLoginActivity.this, mTopicOrMine);
-//                    }
+                LoginSuccessEvent successEvent = new LoginSuccessEvent();
+                EventBus.getDefault().post(successEvent);
+                setResult(RESULT_OK);
+                finish();
 //                } else {
 //                    Intent it = new Intent(this, LoginAccountBindOpenIdActivity.class);
 //                    it.putExtra(TopicVideoActivity.EXTRA_TOPIC, mTopicOrMine);
 //                    startActivity(it);
 //                }
-//            }
-//        }
-//
-//        finish();
-//    }
+            }
+        }
+
+    }
 
 //    public void onEventMainThread(BindPhoneResultEvent event) {
 //        DebugLog.d(TAG, "onEventMainThread BindPhoneResultEvent=" + event);
@@ -402,9 +342,7 @@ public class PhoneNumLoginActivity extends BaseActivity implements Constants {
     protected void onDestroy() {
         super.onDestroy();
         EventBus.getDefault().unregister(this);
-        if (mHandler != null) {
-            mHandler.removeCallbacksAndMessages(null);
-        }
+
     }
 
     /**
@@ -418,31 +356,5 @@ public class PhoneNumLoginActivity extends BaseActivity implements Constants {
 //        EventBus.getDefault().post(event);
     }
 
-    class TextHandler extends Handler {
 
-        @Override
-        public void handleMessage(Message msg) {
-            int what = msg.what;
-            switch (what) {
-                case 0:
-//                    mGetCodeBtn.setText(mCountNum + "s" + getResources().getString(R.string.phone_send_code_tip));
-                    mGetCodeBtn.setText(String.format(getResources().getString(R.string.phone_send_code_tip), mCountNum).toLowerCase());
-                    mCountNum--;
-                    if (mCountNum > 0) {
-                        mHandler.sendEmptyMessage(1);
-                    } else {
-                        mIsSendingCode = false;
-                        mCountNum = WAIT_NUM;
-                        mGetCodeBtn.setText(getResources().getString(R.string.phone_send_code_again));
-                        setCodeBtnEnable(true);
-                    }
-                    break;
-                case 1:
-                    mHandler.sendEmptyMessageDelayed(0, 1000);
-                    break;
-                default:
-                    break;
-            }
-        }
-    }
 }

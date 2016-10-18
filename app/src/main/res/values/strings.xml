@@ -32,7 +32,7 @@
     <string name="wechat_btn_str">微信</string>
     <string name="phone_btn_str">手机</string>
     <string name="phone_num_et_hint">请输入手机号</string>
-    <string name="phone_code_et_hint">请输入验证码</string>
+    <string name="phone_password_hint">请输入密码</string>
     <string name="phone_send_code">获取验证码</string>
     <string name="login">登录</string>
     <string name="phone_bind_tip">绑定手机号可以参与活动，赢取惊喜大奖！</string>
